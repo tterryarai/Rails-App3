@@ -1,0 +1,80 @@
+
+<div class="operation">
+  <%= link_to new_model_stock_path, class: 'operation_link' do %>
+    <div class="operation_1">
+      <%= t('common.button.register')%>
+    </div>
+  <% end %>
+
+  <% ModelStock.group1_list.each do |g| %>
+    <% if g == 0 %>
+
+    <%= link_to model_stocks_path, class: 'operation_link' do %>
+      <div class="operation_1">
+        <%= t('model_stock.group1.elem_all')%>
+      </div>
+    <% end %>
+
+    <% else %>
+
+    <%= link_to model_stocks_path(group1: g), class: 'operation_link' do %>
+      <div class="operation_1">
+        <%= t('model_stock.group1.elem' + g.to_s)%>
+      </div>
+    <% end %>
+
+    <% end %>
+  <% end %>
+</div>
+
+<div class="pagination">
+	<%= paginate(@model_stocks) %>
+</div>
+
+<% @model_stocks.each do |model_stock| %>
+  <%= link_to model_stock, class: 'model_stock_link' do %>
+    <div class='model_stock <%= "status_" + model_stock.status.to_s %>'>
+      <%= model_stock.name %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if false %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('model_stock.index.name')%></th>
+      <th><%= t('model_stock.index.status')%></th>
+      <th><%= t('model_stock.index.group1')%></th>
+      <th><%= t('model_stock.index.remark1')%></th>
+      <th><%= t('model_stock.index.group2')%></th>
+      <th><%= t('model_stock.index.remark2')%></th>
+      <th><%= t('model_stock.index.group3')%></th>
+      <th><%= t('model_stock.index.remark3')%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @model_stocks.each do |model_stock| %>
+      <tr>
+        <td><%= link_to model_stock.name, model_stock %></td>
+        <td><%= t('model_stock.status.elem' + model_stock.status.to_s) %></td>
+        <td><%= t('model_stock.group1.elem' + model_stock.group1.to_s) %></td>
+        <td><%= model_stock.remark1 %></td>
+        <td><%= t('model_stock.group2.elem' + model_stock.group2.to_s) %></td>
+        <td><%= model_stock.remark2 %></td>
+        <td><%= t('model_stock.group3.elem' + model_stock.group3.to_s) %></td>
+        <td><%= model_stock.remark3 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<% end %>
+
+<div class="pagination">
+	<%= paginate(@model_stocks) %>
+</div>
+

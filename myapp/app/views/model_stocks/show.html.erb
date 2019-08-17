@@ -1,0 +1,100 @@
+
+<div class="operation">
+  <%= link_to edit_model_stock_path(@model_stock), class: 'operation_link' do %>
+    <div class="operation_1">
+      <%= t('common.button.edit')%>
+    </div>
+  <% end %>
+  <%= link_to @model_stock, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
+    <div class="operation_1">
+      <%= t('common.button.destroy')%>
+    </div>
+  <% end %>
+  <%= link_to model_stocks_path(page: @page), class: 'operation_link' do %>
+    <div class="operation_1">
+      <%= t('common.button.back')%>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'show', 'page is set:[' + @page.to_s + ']' %>
+
+<p class="model_stock_p"></p>
+
+<p>
+  <strong><%= t('model_stock.show.name')%></strong>
+  <%= @model_stock.name %>
+</p>
+
+<p>
+  <strong><%= t('model_stock.show.status')%></strong>
+  <%= t('model_stock.status.elem' + @model_stock.status.to_s) %>
+</p>
+
+<p>
+  <strong><%= t('model_stock.show.group1')%></strong>
+  <%= t('model_stock.group1.elem' + @model_stock.group1.to_s) %>
+</p>
+
+<% if @model_stock.remark1.present? %>
+<p>
+  <strong><%= t('model_stock.show.remark1')%></strong>
+  <%= @model_stock.remark1 %>
+</p>
+<% end %>
+
+
+<p>
+  <strong><%= t('model_stock.show.group2')%></strong>
+  <%= t('model_stock.group2.elem' + @model_stock.group2.to_s) %>
+</p>
+<% if @model_stock.remark2.present? %>
+<p>
+  <strong><%= t('model_stock.show.remark2')%></strong>
+  <%= @model_stock.remark2 %>
+</p>
+<% end %>
+
+
+<p>
+  <strong><%= t('model_stock.show.group3')%></strong>
+  <%= t('model_stock.group3.elem' + @model_stock.group3.to_s) %>
+</p>
+<% if @model_stock.remark3.present? %>
+<p>
+  <strong><%= t('model_stock.show.remark3')%></strong>
+  <%= @model_stock.remark3 %>
+</p>
+<% end %>
+
+
+<p>
+  <strong><%= t('model_stock.show.scale')%></strong>
+  <%= t('model_stock.scale.elem' + @model_stock.scale.to_s) %>
+</p>
+<% if @model_stock.remark4.present? %>
+<p>
+  <strong><%= t('model_stock.show.remark4')%></strong>
+  <%= @model_stock.remark4 %>
+</p>
+<% end %>
+
+
+<p>
+  <strong><%= t('model_stock.show.provider')%></strong>
+  <%= t('model_stock.provider.elem' + @model_stock.provider.to_s) %>
+</p>
+<% if @model_stock.remark5.present? %>
+<p>
+  <strong><%= t('model_stock.show.remark5')%></strong>
+  <%= @model_stock.remark5 %>
+</p>
+<% end %>
+
+
+<p>
+  <strong><%= t('model_stock.show.desc')%></strong>
+  <%= @model_stock.desc %>
+</p>
+
+
