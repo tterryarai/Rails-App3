@@ -43,6 +43,17 @@ ja:
       created_success: "登録しました"
       updated_success: "更新しました"
       destroyed_success: "削除しました"
+    devise:
+      login: "ログイン"
+      logout: "ログアウト"
+      signup: "サインアップ（非公開）"
+      username: "ユーザ"
+      password: "パスワード"
+      login_button: "ログイン"
+      user_edit: "プロフィール編集"
+      password_confirm: "パスワード（確認用）"
+      current_password: "現在のパスワード"
+
   model_stock:
     index:
       name: "名称"

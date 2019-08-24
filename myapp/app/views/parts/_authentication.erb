@@ -1,0 +1,9 @@
+<div class="auth">
+<% if user_signed_in? %>
+  <%= link_to t('common.devise.user_edit'), edit_user_registration_path %>
+  <%= link_to t('common.devise.logout'), destroy_user_session_path, method: :delete %>
+<% else %>
+  <!-- %= link_to t('common.devise.signup'), new_user_registration_path % -->
+  <%= link_to t('common.devise.login'), new_user_session_path %>
+<% end %>
+</div>

@@ -1,5 +1,9 @@
 <% if notice.present? %>
-<div id='notice'>
+<div id="notice">
   <p id="notice"><%= notice %></p>
+</div>
+<% elsif alert.present? %>
+<div id="alert">
+  <p id="alert"><%= alert %></p>
 </div>
 <% end %>
