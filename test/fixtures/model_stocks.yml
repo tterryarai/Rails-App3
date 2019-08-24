@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyText
+  status: 1
+  group1: 1
+  group2: 1
+  group3: 1
+  scale: 1
+  provider: 1
+  remark1: MyString
+  remark2: MyString
+  remark3: MyString
+  remark4: MyString
+  remark5: MyString
+
+two:
+  name: MyString
+  desc: MyText
+  status: 1
+  group1: 1
+  group2: 1
+  group3: 1
+  scale: 1
+  provider: 1
+  remark1: MyString
+  remark2: MyString
+  remark3: MyString
+  remark4: MyString
+  remark5: MyString
