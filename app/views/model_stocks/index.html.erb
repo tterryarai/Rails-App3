@@ -3,7 +3,7 @@
 <div class="operation">
   <%= link_to new_model_stock_path, class: 'operation_link' do %>
     <div class="operation_1">
-      <%= t('common.button.register')%>
+      <p><%= t('common.button.register')%></p>
     </div>
   <% end %>
 
@@ -12,7 +12,7 @@
 
     <%= link_to model_stocks_path, class: 'operation_link' do %>
       <div class="operation_1">
-        <%= t('model_stock.group1.elem_all')%>
+        <p><%= t('model_stock.group1.elem_all')%></p>
       </div>
     <% end %>
 
@@ -20,7 +20,7 @@
 
     <%= link_to model_stocks_path(group1: g), class: 'operation_link' do %>
       <div class="operation_1">
-        <%= t('model_stock.group1.elem' + g.to_s)%>
+        <p><%= t('model_stock.group1.elem' + g.to_s)%></p>
       </div>
     <% end %>
 

@@ -11,7 +11,41 @@ $mscolor3: #66f; // mean: building
 $mscolor4: #ddf; // mean: completed(built)
 $mscolor5: #ccc; // mean: planning(not purchasing)
 
+.auth {
+  margin-top: 10px;
+  clear: left;
+}
+
+.auth_link{
+  text-decolation: none;
+  color: $black;
+}
+
+.auth_link:visited {
+  color: $black;
+}
+
+.auth_1 {
+  text-align: center;
+  width: 48%;
+  background-color: $mscolor1;
+  margin-left: 1%;
+  margin-right: 1%;
+  float: left;
+
+  p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.auth_1:hover {
+  background-color: $mscolor2;
+  color: $white;
+}
+
 .operation {
+  clear: left;
   // debug
   //border: solid 2px $black;
 }
@@ -28,15 +62,21 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
 }
 
 .operation_1 {
-  line-height: 30px;
   text-align: center;
-  width: 10%;
+  width: 13%;
   background-color: $mscolor1;
   margin-top: 10px;
-  margin-right: 5px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
   float: left;
   // debug
   //border: solid 2px $white;
+
+  p {
+    font-size: 15px;
+    line-height: 50px;
+  }
+
 }
 
 .operation_1:hover {

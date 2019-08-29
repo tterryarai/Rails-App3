@@ -10,7 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body <%= 'id="mobile"'.html_safe if @ua == 'Mobile' %>>
+  <% if @ua == 'Mobile' %>
+    <% css = 'id = "mobile"' %>
+  <% else %>
+    <% css = '' %>
+  <% end %>
+
+  <body <%= css.html_safe %>>
     <%= render '/parts/header' %>
     <%= render '/parts/message' %>
 
