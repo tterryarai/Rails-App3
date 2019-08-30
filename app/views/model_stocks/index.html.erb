@@ -29,7 +29,7 @@
 </div>
 
 <div class="pagination">
-	<%= paginate(@model_stocks) %>
+	<%= paginate @model_stocks, window: 0 %>
 </div>
 
 <% @model_stocks.each do |model_stock| %>
