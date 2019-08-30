@@ -6,7 +6,7 @@ class ModelStocksController < ApplicationController
   def index
 
     # 20items per page(kaminari)
-    per = 20
+    per = 40
 
     # order is follows;
     order = 'group1, group2, group3, name'
@@ -24,12 +24,22 @@ class ModelStocksController < ApplicationController
       session[:page] = 1
     end
 
+    # remember latest group1
+    if params[:group1].present?
+      @group1 = params[:group1]
+      session[:group1] = params[:group1]
+    else
+      @group1 = '0'
+      session[:group1] = '0'
+    end
+
     # Debug
     debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
+    debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
 
     #@model_stocks = ModelStock.all
-    if params[:group1].present?
-      @model_stocks = ModelStock.select(select).where(['group1 = ?',params[:group1]]).order(order).page(@page).per(per)
+    if @group1 != '0'
+      @model_stocks = ModelStock.select(select).where(['group1 = ?',@group1]).order(order).page(@page).per(per)
     else
       @model_stocks = ModelStock.select(select).order(order).page(@page).per(per)
     end
@@ -39,26 +49,32 @@ class ModelStocksController < ApplicationController
   # GET /model_stocks/1.json
   def show
     @page = session[:page]
+    @group1 = session[:group1]
 
     # Debug
     debug 'show', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
+    debug 'show', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
   # GET /model_stocks/new
   def new
     @model_stock = ModelStock.new
     @page = session[:page]
+    @group1 = session[:group1]
 
     # Debug
     debug 'new', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
+    debug 'new', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
   # GET /model_stocks/1/edit
   def edit
     @page = session[:page]
+    @group1 = session[:group1]
 
     # Debug
     debug 'edit', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
+    debug 'edit', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
   # POST /model_stocks

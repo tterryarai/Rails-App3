@@ -10,7 +10,7 @@
       <%= t('common.button.destroy')%>
     </div>
   <% end %>
-  <%= link_to model_stocks_path(page: @page), class: 'operation_link' do %>
+  <%= link_to model_stocks_path(page: @page, group1: @group1), class: 'operation_link' do %>
     <div class="operation_1">
       <%= t('common.button.back')%>
     </div>
@@ -18,6 +18,7 @@
 </div>
 
 <% debug 'show', 'page is set:[' + @page.to_s + ']' %>
+<% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
 
 <p class="model_stock_p"></p>
 
