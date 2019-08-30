@@ -5,99 +5,112 @@
 $white: #fff;
 $black: #000;
 
-$mscolor1: #aaf; // mean: purchased
+$mscolor1: #aaf; // mean: purchased/links
 $mscolor2: #88f; // mean: hover
 $mscolor3: #66f; // mean: building
-$mscolor4: #ddf; // mean: completed(built)
+$mscolor4: #ddf; // mean: completed(built)/background(desktop)
 $mscolor5: #ccc; // mean: planning(not purchasing)
 
+////////////////// authentication block ///////////////////
 .auth {
-  margin-top: 10px;
+  height: 50px;
   clear: left;
-}
+  margin-top: 10px;
 
-.auth_link{
-  text-decolation: none;
-  color: $black;
-}
+  .auth_link{
+    color: $black;
 
-.auth_link:visited {
-  color: $black;
-}
+    .auth_link:visited {color: $black;}
 
-.auth_1 {
-  text-align: center;
-  width: 48%;
-  background-color: $mscolor1;
-  margin-left: 1%;
-  margin-right: 1%;
-  float: left;
+    .auth_1 {
+      text-align: center;
+      width: 49%;
+      background-color: $mscolor1;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
 
-  p {
-    font-size: 15px;
-    line-height: 20px;
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .auth_1:hover {
+      background-color: $mscolor2;
+      color: $white;
+    }
   }
 }
 
-.auth_1:hover {
-  background-color: $mscolor2;
-  color: $white;
-}
 
+////////////////// operation block ///////////////////
 .operation {
+  height: 50px;
   clear: left;
-  // debug
-  //border: solid 2px $black;
-}
-
-.operation_link {
-  text-decoration: none;
-  color: $black;
-  // debug
-  //border: solid 2px $black;
-}
-
-.operation_link:visited {
-  color: $black;
-}
-
-.operation_1 {
-  text-align: center;
-  width: 13%;
-  background-color: $mscolor1;
   margin-top: 10px;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-  float: left;
-  // debug
-  //border: solid 2px $white;
 
-  p {
+  .operation_link {
+    color: $black;
+
+    .operation_link:visited {color: $black;}
+
+    .operation_1 {
+      text-align: center;
+      width: 13%;
+      background-color: $mscolor1;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .operation_1:hover {
+      background-color: $mscolor2;
+      color: $white;
+    }
+  }
+}
+
+
+////////////////// pagination block ///////////////////
+.pagination {
+  height: 30px;
+  clear: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .page, .first, .prev, .next, .last, {
+    width: 25px;
+    background-color: $mscolor1;
     font-size: 15px;
-    line-height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+    float: left;
+    text-align: center;
+
+    a, a:visited, a:hover {color: $black;}
+
+    a:hover {
+      background-color: $mscolor2;
+      color: $white;
+    }
   }
 
+  .current {background-color: $mscolor4;}
 }
 
-.operation_1:hover {
-  background-color: $mscolor2;
-  color: $white;
-}
 
-.pagination {
-  line-height: 30px;
-  clear: left;
-  padding-top: 10px;
-  // debug
-  //border: solid 2px $black;
-
-
-}
+////////////////// model_stock ///////////////////
 
 .model_stock_link {
   text-decoration: none;
   color: $black;
-  }
+}
 
 .model_stock {
   // box
