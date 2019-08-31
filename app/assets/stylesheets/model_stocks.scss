@@ -11,6 +11,7 @@ $mscolor3: #66f; // mean: building
 $mscolor4: #ddf; // mean: completed(built)/background(desktop)
 $mscolor5: #ccc; // mean: planning(not purchasing)
 
+
 ////////////////// authentication block ///////////////////
 .auth {
   height: 50px;
@@ -83,7 +84,6 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
   clear: left;
   margin-top: 10px;
   margin-bottom: 10px;
-
   .page, .first, .prev, .next, .last, {
     width: 25px;
     background-color: $mscolor1;
@@ -93,7 +93,10 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
     float: left;
     text-align: center;
 
-    a, a:visited, a:hover {color: $black;}
+    a, a:visited, a:hover {
+      text-decoration: none;
+      color: $black;
+    }
 
     a:hover {
       background-color: $mscolor2;
@@ -106,7 +109,6 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
 
 
 ////////////////// model_stock ///////////////////
-
 .model_stock_link {
   text-decoration: none;
   color: $black;

@@ -6,7 +6,7 @@ class ModelStocksController < ApplicationController
   def index
 
     # 20items per page(kaminari)
-    per = 40
+    per = 80
 
     # order is follows;
     order = 'group1, group2, group3, name'

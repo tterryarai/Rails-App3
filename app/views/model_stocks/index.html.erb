@@ -1,3 +1,4 @@
+
 <%= render '/parts/authentication' %>
 
 <div class="operation">
@@ -29,18 +30,24 @@
 </div>
 
 <div class="pagination">
-	<%= paginate @model_stocks, window: 0 %>
+  <%= paginate @model_stocks, window: 0 %>
 </div>
 
+<% if @ua == 'Mobile' %>
+
+<div class='ms_grid' data-masonry='{"itemSelector":".ms_item"}'>
 <% @model_stocks.each do |model_stock| %>
+<div class='ms_item'>
   <%= link_to model_stock, class: 'model_stock_link' do %>
     <div class='model_stock <%= "status_" + model_stock.status.to_s %>'>
       <%= model_stock.name %>
     </div>
   <% end %>
+</div>
 <% end %>
+</div>
 
-<% if false %>
+<% elsif @ua == 'Desktop' %>
 
 <table>
   <thead>
@@ -73,9 +80,10 @@
 </table>
 <br>
 
+<% else %>
+  <%= t('common.other.unrecognized_device')%>
 <% end %>
 
 <div class="pagination">
 	<%= paginate(@model_stocks) %>
 </div>
-

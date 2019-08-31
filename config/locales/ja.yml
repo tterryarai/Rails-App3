@@ -53,6 +53,8 @@ ja:
       user_edit: "プロフィール編集"
       password_confirm: "パスワード（確認用）"
       current_password: "現在のパスワード"
+    other:
+      unrecognized_device: "対応していないデバイスです"
 
   model_stock:
     index:

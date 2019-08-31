@@ -2,4 +2,23 @@
   background-color: #fff;
   font-size: 15px;
   min-width: 350px;
+
+.ms_grid {
+  columnWidth: 100px;
+
+  .ms_item {
+    height: 53px;
+    padding: 3px;
+
+    .model_stock {
+      min-width: 100px;
+      line-height: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 0px;
+      border-radius: 10px;
+    }
+  }
+}
+
 }
