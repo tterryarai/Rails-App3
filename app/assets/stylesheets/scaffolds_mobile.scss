@@ -4,14 +4,14 @@
   min-width: 350px;
 
 .ms_grid {
-  columnWidth: 100px;
 
   .ms_item {
     height: 53px;
     padding: 3px;
+    min-width: 24%;
+    float: left;
 
     .model_stock {
-      min-width: 100px;
       line-height: 50px;
       padding-left: 10px;
       padding-right: 10px;

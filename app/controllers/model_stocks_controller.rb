@@ -11,9 +11,12 @@ class ModelStocksController < ApplicationController
     # order is follows;
     order = 'group1, group2, group3, name'
 
-    # get only items below
-    select = 'id, name, status'
-    #select = 'id, name, status, group1, group2, group3, remark1, remark2, remark3'
+    # get necessary attr only
+    if @ua == 'Mobile'
+      select = 'id, name, status'
+    else
+      select = 'id, name, status, group1, group2, group3, remark1, remark2, remark3'
+    end
 
     # remember latest page
     if params[:page].present?

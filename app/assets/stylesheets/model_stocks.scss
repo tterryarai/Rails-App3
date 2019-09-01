@@ -84,6 +84,7 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
   clear: left;
   margin-top: 10px;
   margin-bottom: 10px;
+
   .page, .first, .prev, .next, .last, {
     width: 25px;
     background-color: $mscolor1;
@@ -92,6 +93,8 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
     margin-right: 2px;
     float: left;
     text-align: center;
+    padding: 5px;
+    line-height: 20px;
 
     a, a:visited, a:hover {
       text-decoration: none;
@@ -104,7 +107,9 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
     }
   }
 
-  .current {background-color: $mscolor4;}
+  .current, .gap {
+    background-color: $mscolor4;
+  }
 }
 
 
@@ -115,36 +120,67 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
 }
 
 .model_stock {
-  // box
   line-height: 30px;
   background-color: $mscolor1;
   border: solid 2px $mscolor1;
   margin-bottom: 10px;
-
-  // text
   text-align: center;
-
-  // debug
-  //border: solid 2px $black;
-
 }
 
 .status_1 { // planning
   border: solid 2px $mscolor5;
   background-color: $mscolor5;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
 }
 
 .status_2 { // purchased(default)
+  background-color: $mscolor1;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
 }
 
 .status_3 { // building
   border: solid 2px $mscolor3;
   background-color: $mscolor3;
+  color: $white;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $white;
+  }
+
+  a:hover {
+    color: $white;
+  }
 }
 
 .status_4 { // completed(built)
   border: solid 2px $mscolor2;
   background-color: $mscolor4;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
 }
 
 .model_stock:hover {
@@ -157,20 +193,24 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
   color: $black;
 }
 
-.model_stock_p {
-  padding-top: 10px;
-  clear: left;
+.ms_table {
+  th {
+    padding: 2px 10px 2px 10px;
+    background-color: $mscolor2;
+    color: $white;
+  }
+  td {
+    text-align: center;
+  }
 }
 
-.first, .prev, .next, .last, .page {
-  padding: 5px;
-  line-height: 20px;
-  //background-color: $mscolor2;
-  // debug
-  //border: solid 2px $white;
+.ms_details {
+  margin-top: 10px;
+  p {
+    strong {
+      padding: 2px 10px 2px 10px;
+      background-color: $mscolor2;
+      color: $white;
+    }
+  }
 }
-
-.gap {
-  //background-color: $mscolor4;  //default color
-}
-

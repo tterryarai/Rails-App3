@@ -1,18 +1,18 @@
 
-<div class="operation">
+<div class='operation'>
   <%= link_to edit_model_stock_path(@model_stock), class: 'operation_link' do %>
-    <div class="operation_1">
-      <%= t('common.button.edit')%>
+    <div class='operation_1'>
+      <p><%= t('common.button.edit')%></p>
     </div>
   <% end %>
   <%= link_to @model_stock, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
-    <div class="operation_1">
-      <%= t('common.button.destroy')%>
+    <div class='operation_1'>
+      <p><%= t('common.button.destroy')%></p>
     </div>
   <% end %>
   <%= link_to model_stocks_path(page: @page, group1: @group1), class: 'operation_link' do %>
-    <div class="operation_1">
-      <%= t('common.button.back')%>
+    <div class='operation_1'>
+      <p><%= t('common.button.back')%></p>
     </div>
   <% end %>
 </div>
@@ -20,7 +20,7 @@
 <% debug 'show', 'page is set:[' + @page.to_s + ']' %>
 <% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
 
-<p class="model_stock_p"></p>
+<div class='ms_details'>
 
 <p>
   <strong><%= t('model_stock.show.name')%></strong>
@@ -98,4 +98,5 @@
   <%= @model_stock.desc %>
 </p>
 
+</div>
 

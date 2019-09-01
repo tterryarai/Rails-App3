@@ -1,10 +1,10 @@
-<p class="model_stock_p"></p>
-
 <%= form_with(model: model_stock, local: true) do |form| %>
+
+<div class='ms_details'>
+
   <% if model_stock.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(model_stock.errors.count, "error") %> prohibited this model_stock from being saved:</h2>
-
       <ul>
       <% model_stock.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -68,3 +68,6 @@
     <%= form.submit t('common.button.register')%>
   </div>
 <% end %>
+
+</div>
+

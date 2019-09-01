@@ -1,13 +1,13 @@
 
-<div class="operation">
-  <%= link_to @model_stock, class: 'model_stock_link' do %>
-    <div class="operation_1">
-      <%= t('common.button.show') %>
+<div class='operation'>
+  <%= link_to @model_stock, class: 'operation_link' do %>
+    <div class='operation_1'>
+      <p><%= t('common.button.show') %></p>
     </div>
   <% end %>
   <%= link_to model_stocks_path(page: @page, group1: @group1), class: 'operation_link' do %>
-    <div class="operation_1">
-      <%= t('common.button.back')%>
+    <div class='operation_1'>
+      <p><%= t('common.button.back')%></p>
     </div>
   <% end %>
 </div>

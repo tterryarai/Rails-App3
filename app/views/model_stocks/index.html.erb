@@ -35,21 +35,21 @@
 
 <% if @ua == 'Mobile' %>
 
-<div class='ms_grid' data-masonry='{"itemSelector":".ms_item"}'>
-<% @model_stocks.each do |model_stock| %>
-<div class='ms_item'>
-  <%= link_to model_stock, class: 'model_stock_link' do %>
-    <div class='model_stock <%= "status_" + model_stock.status.to_s %>'>
-      <%= model_stock.name %>
-    </div>
+<div class='ms_grid'>
+  <% @model_stocks.each do |model_stock| %>
+  <div class='ms_item'>
+    <%= link_to model_stock, class: 'model_stock_link' do %>
+      <div class='model_stock <%= "status_" + model_stock.status.to_s %>'>
+        <%= model_stock.name %>
+      </div>
+    <% end %>
+  </div>
   <% end %>
-</div>
-<% end %>
 </div>
 
 <% elsif @ua == 'Desktop' %>
 
-<table>
+<table class='ms_table'>
   <thead>
     <tr>
       <th><%= t('model_stock.index.name')%></th>
@@ -65,7 +65,8 @@
 
   <tbody>
     <% @model_stocks.each do |model_stock| %>
-      <tr>
+      <% cl="status_" + model_stock.status.to_s %>
+      <tr class=<%= cl%>>
         <td><%= link_to model_stock.name, model_stock %></td>
         <td><%= t('model_stock.status.elem' + model_stock.status.to_s) %></td>
         <td><%= t('model_stock.group1.elem' + model_stock.group1.to_s) %></td>
