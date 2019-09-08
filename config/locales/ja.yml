@@ -230,10 +230,10 @@ ja:
       elem4: "読了"
     group1:
       elem0: "(なし)"
-      elem1: "Forgotten Realms"
-      elem2: "Dragon lance"
+      elem1: "ＦＲ"
+      elem2: "ＤＬ"
       elem3: "ミステリー"
-      elem4: "時代小説"
+      elem4: "時代"
       elem5: "ライトノベル"
       elem999: "その他"
       elem_all: "全て"
