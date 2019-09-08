@@ -1,0 +1,71 @@
+<%= form_with(model: book, local: true) do |form| %>
+
+<div class='book_details'>
+
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= t('book.edit.name') %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.status')%>
+    <%= form.select :status, options_for_select(book_status_list, @book.status)%>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.group1') %>
+    <%= form.select :group1, options_for_select(book_group1_list, @book.group1)%>
+    <%= t('book.edit.remark1') %>
+    <%= form.text_field :remark1 %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.group2') %>
+    <%= form.select :group2, options_for_select(book_group2_list, @book.group2)%>
+    <%= t('book.edit.remark2') %>
+    <%= form.text_field :remark2 %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.group3') %>
+    <%= form.select :group3, options_for_select(book_group3_list, @book.group3)%>
+    <%= t('book.edit.remark3') %>
+    <%= form.text_field :remark3 %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.author')%>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.provider')%>
+    <%= form.select :provider, options_for_select(book_provider_list, @book.provider)%>
+    <%= t('book.edit.remark5')%>
+    <%= form.text_field :remark5 %>
+  </div>
+
+  <div class="field">
+    <%= t('book.edit.desc')%>
+    <%= form.text_area :desc %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit t('common.button.register')%>
+  </div>
+<% end %>
+
+</div>
+

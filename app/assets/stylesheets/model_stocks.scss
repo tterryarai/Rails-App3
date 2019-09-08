@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+////////////////// local variables ///////////////////
+
 $white: #fff;
 $black: #000;
 
@@ -12,108 +15,20 @@ $mscolor4: #ddf; // mean: completed(built)/background(desktop)
 $mscolor5: #ccc; // mean: planning(not purchasing)
 
 
-////////////////// authentication block ///////////////////
-.auth {
+////////////////// Operation ///////////////////
+
+.model_stock_operation {
   height: 50px;
-  clear: left;
-  margin-top: 10px;
 
-  .auth_link{
-    color: $black;
-
-    .auth_link:visited {color: $black;}
-
-    .auth_1 {
-      text-align: center;
-      width: 49%;
-      background-color: $mscolor1;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      float: left;
-
-      p {
-        font-size: 15px;
-        line-height: 20px;
-      }
-    }
-
-    .auth_1:hover {
-      background-color: $mscolor2;
-      color: $white;
-    }
+  .model_stock_operation_1 {
+    width: 13%;
   }
 }
 
 
-////////////////// operation block ///////////////////
-.operation {
-  height: 50px;
-  clear: left;
-  margin-top: 10px;
-
-  .operation_link {
-    color: $black;
-
-    .operation_link:visited {color: $black;}
-
-    .operation_1 {
-      text-align: center;
-      width: 13%;
-      background-color: $mscolor1;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      float: left;
-
-      p {
-        font-size: 15px;
-        line-height: 20px;
-      }
-    }
-
-    .operation_1:hover {
-      background-color: $mscolor2;
-      color: $white;
-    }
-  }
-}
+////////////////// (TBD) ///////////////////
 
 
-////////////////// pagination block ///////////////////
-.pagination {
-  height: 30px;
-  clear: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  .page, .first, .prev, .next, .last, {
-    width: 25px;
-    background-color: $mscolor1;
-    font-size: 15px;
-    margin-left: 2px;
-    margin-right: 2px;
-    float: left;
-    text-align: center;
-    padding: 5px;
-    line-height: 20px;
-
-    a, a:visited, a:hover {
-      text-decoration: none;
-      color: $black;
-    }
-
-    a:hover {
-      background-color: $mscolor2;
-      color: $white;
-    }
-  }
-
-  .current, .gap {
-    background-color: $mscolor4;
-  }
-}
-
-
-////////////////// model_stock ///////////////////
 .model_stock_link {
   text-decoration: none;
   color: $black;
@@ -127,62 +42,6 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
   text-align: center;
 }
 
-.status_1 { // planning
-  border: solid 2px $mscolor5;
-  background-color: $mscolor5;
-
-  a, a:visited {
-    text-decoration: none;
-    color: $black;
-  }
-
-  a:hover {
-    color: $white;
-  }
-}
-
-.status_2 { // purchased(default)
-  background-color: $mscolor1;
-
-  a, a:visited {
-    text-decoration: none;
-    color: $black;
-  }
-
-  a:hover {
-    color: $white;
-  }
-}
-
-.status_3 { // building
-  border: solid 2px $mscolor3;
-  background-color: $mscolor3;
-  color: $white;
-
-  a, a:visited {
-    text-decoration: none;
-    color: $white;
-  }
-
-  a:hover {
-    color: $white;
-  }
-}
-
-.status_4 { // completed(built)
-  border: solid 2px $mscolor2;
-  background-color: $mscolor4;
-
-  a, a:visited {
-    text-decoration: none;
-    color: $black;
-  }
-
-  a:hover {
-    color: $white;
-  }
-}
-
 .model_stock:hover {
   border: solid 2px $mscolor2;
   background-color: $mscolor2;
@@ -193,16 +52,6 @@ $mscolor5: #ccc; // mean: planning(not purchasing)
   color: $black;
 }
 
-.ms_table {
-  th {
-    padding: 2px 10px 2px 10px;
-    background-color: $mscolor2;
-    color: $white;
-  }
-  td {
-    text-align: center;
-  }
-}
 
 .ms_details {
   margin-top: 10px;

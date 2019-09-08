@@ -1,8 +1,8 @@
-class ModelStocksController < ApplicationController
-  before_action :set_model_stock, only: [:show, :edit, :update, :destroy]
+class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  # GET /model_stocks
-  # GET /model_stocks.json
+  # GET /books
+  # GET /books.json
   def index
 
     # per page(kaminari)
@@ -28,7 +28,7 @@ class ModelStocksController < ApplicationController
     end
 
     # remember latest group1
-    if params[:group1].present?
+    if params[:grup1].present?
       @group1 = params[:group1]
       session[:group1] = params[:group1]
     else
@@ -40,16 +40,16 @@ class ModelStocksController < ApplicationController
     debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
     debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
 
-    #@model_stocks = ModelStock.all
+    #@books = Book.all
     if @group1 != '0'
-      @model_stocks = ModelStock.select(select).where(['group1 = ?',@group1]).order(order).page(@page).per(per)
+      @books = Book.select(select).where(['group1 = ?', @group1]).order(order).page(@page).per(per)
     else
-      @model_stocks = ModelStock.select(select).order(order).page(@page).per(per)
+      @books = Book.select(select).order(order).page(@page).per(per)
     end
   end
 
-  # GET /model_stocks/1
-  # GET /model_stocks/1.json
+  # GET /books/1
+  # GET /books/1.json
   def show
     @page = session[:page]
     @group1 = session[:group1]
@@ -59,9 +59,9 @@ class ModelStocksController < ApplicationController
     debug 'show', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
-  # GET /model_stocks/new
+  # GET /books/new
   def new
-    @model_stock = ModelStock.new
+    @book = Book.new
     @page = session[:page]
     @group1 = session[:group1]
 
@@ -70,7 +70,7 @@ class ModelStocksController < ApplicationController
     debug 'new', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
-  # GET /model_stocks/1/edit
+  # GET /books/1/edit
   def edit
     @page = session[:page]
     @group1 = session[:group1]
@@ -80,55 +80,54 @@ class ModelStocksController < ApplicationController
     debug 'edit', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
   end
 
-  # POST /model_stocks
-  # POST /model_stocks.json
+  # POST /books
+  # POST /books.json
   def create
-    @model_stock = ModelStock.new(model_stock_params)
+    @book = Book.new(book_params)
 
     respond_to do |format|
-      if @model_stock.save
-        format.html { redirect_to @model_stock, notice: t('common.message.created_success')}
-        format.json { render :show, status: :created, location: @model_stock }
+      if @book.save
+        format.html { redirect_to @book, notice: t('common.message.created_success')}
+        format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
-        format.json { render json: @model_stock.errors, status: :unprocessable_entity }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /model_stocks/1
-  # PATCH/PUT /model_stocks/1.json
+  # PATCH/PUT /books/1
+  # PATCH/PUT /books/1.json
   def update
     respond_to do |format|
-      if @model_stock.update(model_stock_params)
-        format.html { redirect_to @model_stock, notice: t('common.message.updated_success')}
-        format.json { render :show, status: :ok, location: @model_stock }
+      if @book.update(book_params)
+        format.html { redirect_to @book, notice: t('common.message.updated_success')}
+        format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
-        format.json { render json: @model_stock.errors, status: :unprocessable_entity }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /model_stocks/1
-  # DELETE /model_stocks/1.json
+  # DELETE /books/1
+  # DELETE /books/1.json
   def destroy
-    @model_stock.destroy
+    @book.destroy
     respond_to do |format|
-      format.html { redirect_to model_stocks_url, notice: t('common.message.destroyed_success')}
+      format.html { redirect_to books_url, notice: t('common.message.destroyed_success')}
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_model_stock
-      @model_stock = ModelStock.find(params[:id])
+    def set_book
+      @book = Book.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def model_stock_params
-      params.require(:model_stock).permit(:name, :desc, :status, :group1, :group2, :group3, :scale, :provider, :remark1, :remark2, :remark3, :remark4, :remark5)
+    def book_params
+      params.require(:book).permit(:name, :desc, :status, :group1, :group2, :group3, :author, :provider, :remark1, :remark2, :remark3, :remark4, :remark5)
     end
-
 end

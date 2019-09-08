@@ -1,0 +1,92 @@
+
+<% cl = 'operation_1 book_operation_1' %>
+
+<div class='operation book_operation'>
+  <%= link_to edit_book_path(@book), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.edit')%></p>
+    </div>
+  <% end %>
+  <%= link_to @book, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.destroy')%></p>
+    </div>
+  <% end %>
+  <%= link_to books_path(page: @page, group1: @group1), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.back')%></p>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'show', 'page is set:[' + @page.to_s + ']' %>
+<% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
+
+<div class='book_details'>
+
+<p>
+  <strong><%= t('book.show.name')%></strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong><%= t('book.show.status')%></strong>
+  <%= t('book.status.elem' + @book.status.to_s) %>
+</p>
+
+<p>
+  <strong><%= t('book.show.group1')%></strong>
+  <%= t('book.group1.elem' + @book.group1.to_s) %>
+</p>
+<% if @book.remark1.present? %>
+<p>
+  <strong><%= t('book.show.remark1')%></strong>
+  <%= @book.remark1 %>
+</p>
+<% end %>
+
+<p>
+  <strong><%= t('book.show.group2')%></strong>
+  <%= t('book.group2.elem' + @book.group2.to_s) %>
+</p>
+<% if @book.remark2.present? %>
+<p>
+  <strong><%= t('book.show.remark2')%></strong>
+  <%= @book.remark2 %>
+</p>
+<% end %>
+
+<p>
+  <strong><%= t('book.show.group3')%></strong>
+  <%= t('book.group3.elem' + @book.group3.to_s) %>
+</p>
+<% if @book.remark3.present? %>
+<p>
+  <strong><%= t('book.show.remark3')%></strong>
+  <%= @book.remark3 %>
+</p>
+<% end %>
+
+<p>
+  <strong><%= t('book.show.author')%></strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong><%= t('book.show.provider')%></strong>
+  <%= t('book_provider.elem' + @book.provider.to_s)%>
+</p>
+<% if @book.remark5.present? %>
+<p>
+  <strong><%= t('book.show.remark5')%></strong>
+  <%= @book.remark5 %>
+</p>
+<% end %>
+
+<p>
+  <strong><%= t('book.show.desc')%></strong>
+  <%= @book.desc %>
+</p>
+
+</div>
+

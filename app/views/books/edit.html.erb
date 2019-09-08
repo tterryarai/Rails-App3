@@ -1,0 +1,18 @@
+<div class='operation book_operation'>
+  <%= link_to @book, class: 'operation_link' do %>
+    <div class='operation_1 book_operation_1'>
+      <p><%= t('common.button.show') %></p>
+    </div>
+  <% end %>
+  <%= link_to books_path(page: @page, group1: @group1), class: 'operation_link' do %>
+    <div class='operation_1 book_operation_1'>
+      <p><%= t('common.button.back')%></p>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'edit', 'page is set:[' + @page.to_s + ']' %>
+<% debug 'edit', 'group1 is set:[' + @group1.to_s + ']' %>
+
+<%= render 'form', book: @book %>
+

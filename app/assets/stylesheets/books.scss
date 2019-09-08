@@ -1,0 +1,52 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+////////////////// local variables ///////////////////
+
+$white: #fff;
+$black: #000;
+
+$bcolor1: #aaf; // mean: purchased/links
+$bcolor2: #88f; // mean: hover
+$bcolor3: #66f; // mean: building
+$bcolor4: #ddf; // mean: completed(built)/background(desktop)
+$bcolor5: #ccc; // mean: planning(not purchasing)
+
+
+////////////////// Operation ///////////////////
+
+.book_operation {
+  height: 70px;
+
+  .book_operation_1 {
+    width: 11.5%;
+  }
+}
+
+
+////////////////// (TBD) ///////////////////
+
+.book:hover {
+  border: solid 2px $bcolor2;
+  background-color: $bcolor2;
+  color: $white;
+}
+
+.book_link:visited {
+  color: $black;
+}
+
+
+.book_details {
+  margin-top: 10px;
+  p {
+    strong {
+      padding: 2px 10px 2px 10px;
+      background-color: $bcolor2;
+      color: $white;
+    }
+  }
+}
+

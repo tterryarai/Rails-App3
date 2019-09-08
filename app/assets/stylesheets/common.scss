@@ -1,0 +1,194 @@
+//
+// Common css setting
+//
+
+
+////////////////// local variables ///////////////////
+
+$white: #fff;
+$black: #000;
+
+$color1: #aaf; // mean: purchased/links
+$color2: #88f; // mean: hover
+$color3: #66f; // mean: building
+$color4: #ddf; // mean: completed(built)/background(desktop)
+$color5: #ccc; // mean: planning(not purchasing)
+
+
+////////////////// Authentication ///////////////////
+
+.auth {
+  height: 50px;
+  clear: left;
+  margin-top: 10px;
+
+  .auth_link{
+    color: $black;
+
+    .auth_link:visited {color: $black;}
+
+    .auth_1 {
+      text-align: center;
+      width: 49%;
+      background-color: $color1;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .auth_1:hover {
+      background-color: $color2;
+      color: $white;
+    }
+  }
+}
+
+
+////////////////// Operation ///////////////////
+
+.operation {
+  clear: left;
+  margin-top: 10px;
+
+  .operation_link {
+    color: $black;
+
+    .operation_link:visited {color: $black;}
+
+    .operation_1 {
+      height: 100%;
+      text-align: center;
+      background-color: $color1;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .operation_1:hover {
+      background-color: $color2;
+      color: $white;
+    }
+  }
+}
+
+
+////////////////// Pagination ///////////////////
+
+.pagination {
+  height: 30px;
+  clear: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .page, .first, .prev, .next, .last, {
+    width: 25px;
+    background-color: $color1;
+    font-size: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    line-height: 20px;
+
+    a, a:visited, a:hover {
+      text-decoration: none;
+      color: $black;
+    }
+
+    a:hover {
+      background-color: $color2;
+      color: $white;
+    }
+  }
+
+  .current, .gap {
+    background-color: $color4;
+  }
+}
+
+
+////////////////// Contents: table ///////////////////
+
+.table {
+  width: 100%;
+
+  th {
+    padding: 2px 10px 2px 10px;
+    background-color: $color2;
+    color: $white;
+  }
+  td {
+    text-align: center;
+  }
+}
+
+
+////////////////// Contents: status ///////////////////
+
+.status_1 {
+  border: solid 2px $color5;
+  background-color: $color5;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+
+.status_2 { // default
+  background-color: $color1;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+
+.status_3 {
+  border: solid 2px $color3;
+  background-color: $color3;
+  color: $white;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $white;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+
+.status_4 {
+  border: solid 2px $color2;
+  background-color: $color4;
+
+  a, a:visited {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+

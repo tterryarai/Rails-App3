@@ -130,7 +130,7 @@ ja:
       elem13: "日空軍"
       elem14: "独空軍"
       elem15: "英空軍"
-      elem16: "米空１２軍"
+      elem16: "米空軍"
       elem999: "その他"
     group3:
       elem0: "(なし)"
@@ -178,4 +178,43 @@ ja:
       truncate: "..."
       next: ">"
       last: ">>"
+  book:
+    status:
+      elem0: "未定"
+      elem1: "予定"
+      elem2: "購入済"
+      elem3: "読中"
+      elem4: "読了"
+    group1:
+      elem0: "(なし)"
+      elem1: "Forgotten Realms"
+      elem2: "Dragon lance"
+      elem3: "ミステリー"
+      elem4: "時代小説"
+      elem5: "ライトノベル"
+      elem999: "その他"
+      elem_all: "全て"
+    group2:
+      elem0: "(なし)"
+      elem999: "その他"
+    group3:
+      elem0: "(なし)"
+      elem999: "その他"
+    provider:
+      elem0: "(なし)"
+      elem999: "その他"
+    show:
+      name: "タイトル"
+      status: "状態"
+      group1: "区分1"
+      group2: "区分2"
+      group3: "区分3"
+      author: "著者"
+      provider: "出版社"
+      remark1: "備考1"
+      remark2: "備考2"
+      remark3: "備考3"
+      remark4: "（不使用）"
+      remark5: "その他の出版社"
+      desc: "詳細"
 

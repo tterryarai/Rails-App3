@@ -1,9 +1,9 @@
 
 <%= render '/parts/authentication' %>
 
-<div class="operation">
+<div class="operation model_stock_operation">
   <%= link_to new_model_stock_path, class: 'operation_link' do %>
-    <div class="operation_1">
+    <div class="operation_1 model_stock_operation_1">
       <p><%= t('common.button.register')%></p>
     </div>
   <% end %>
@@ -12,7 +12,7 @@
     <% if g == 0 %>
 
     <%= link_to model_stocks_path, class: 'operation_link' do %>
-      <div class="operation_1">
+      <div class="operation_1 model_stock_operation_1">
         <p><%= t('model_stock.group1.elem_all')%></p>
       </div>
     <% end %>
@@ -20,7 +20,7 @@
     <% else %>
 
     <%= link_to model_stocks_path(group1: g), class: 'operation_link' do %>
-      <div class="operation_1">
+      <div class="operation_1 model_stock_operation_1">
         <p><%= t('model_stock.group1.elem' + g.to_s)%></p>
       </div>
     <% end %>
@@ -49,32 +49,26 @@
 
 <% elsif @ua == 'Desktop' %>
 
-<table class='ms_table'>
+<table class='table'>
   <thead>
     <tr>
       <th><%= t('model_stock.index.name')%></th>
       <th><%= t('model_stock.index.status')%></th>
       <th><%= t('model_stock.index.group1')%></th>
-      <th><%= t('model_stock.index.remark1')%></th>
       <th><%= t('model_stock.index.group2')%></th>
-      <th><%= t('model_stock.index.remark2')%></th>
       <th><%= t('model_stock.index.group3')%></th>
-      <th><%= t('model_stock.index.remark3')%></th>
     </tr>
   </thead>
 
   <tbody>
     <% @model_stocks.each do |model_stock| %>
       <% cl="status_" + model_stock.status.to_s %>
-      <tr class=<%= cl%>>
+      <tr class=<%= cl %>>
         <td><%= link_to model_stock.name, model_stock %></td>
         <td><%= t('model_stock.status.elem' + model_stock.status.to_s) %></td>
-        <td><%= t('model_stock.group1.elem' + model_stock.group1.to_s) %></td>
-        <td><%= model_stock.remark1 %></td>
-        <td><%= t('model_stock.group2.elem' + model_stock.group2.to_s) %></td>
-        <td><%= model_stock.remark2 %></td>
-        <td><%= t('model_stock.group3.elem' + model_stock.group3.to_s) %></td>
-        <td><%= model_stock.remark3 %></td>
+        <td><%= fix_group1(model_stock)%></td>
+        <td><%= fix_group2(model_stock)%></td>
+        <td><%= fix_group3(model_stock)%></td>
       </tr>
     <% end %>
   </tbody>
@@ -86,5 +80,5 @@
 <% end %>
 
 <div class="pagination">
-	<%= paginate(@model_stocks) %>
+  <%= paginate @model_stocks, window: 0 %>
 </div>

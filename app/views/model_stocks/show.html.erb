@@ -1,17 +1,19 @@
 
-<div class='operation'>
+<% cl = 'operation_1 model_stock_operation_1' %>
+
+<div class='operation model_stock_operation'>
   <%= link_to edit_model_stock_path(@model_stock), class: 'operation_link' do %>
-    <div class='operation_1'>
+    <div class="<%= cl %>">
       <p><%= t('common.button.edit')%></p>
     </div>
   <% end %>
   <%= link_to @model_stock, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
-    <div class='operation_1'>
+    <div class="<%= cl %>">
       <p><%= t('common.button.destroy')%></p>
     </div>
   <% end %>
   <%= link_to model_stocks_path(page: @page, group1: @group1), class: 'operation_link' do %>
-    <div class='operation_1'>
+    <div class="<%= cl %>">
       <p><%= t('common.button.back')%></p>
     </div>
   <% end %>
@@ -43,7 +45,6 @@
   <%= @model_stock.remark1 %>
 </p>
 <% end %>
-
 
 <p>
   <strong><%= t('model_stock.show.group2')%></strong>
