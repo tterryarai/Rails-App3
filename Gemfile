@@ -70,6 +70,6 @@ gem "nokogiri", ">= 1.10.4"
 
 # for pagination
 gem 'kaminari'
-gem 'devise'
+gem 'devise', ">= 4.7.1"
 
 
