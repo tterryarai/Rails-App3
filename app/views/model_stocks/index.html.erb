@@ -66,9 +66,9 @@
       <tr class=<%= cl %>>
         <td><%= link_to model_stock.name, model_stock %></td>
         <td><%= t('model_stock.status.elem' + model_stock.status.to_s) %></td>
-        <td><%= fix_group1(model_stock)%></td>
-        <td><%= fix_group2(model_stock)%></td>
-        <td><%= fix_group3(model_stock)%></td>
+        <td><%= model_stock_fix_group1(model_stock)%></td>
+        <td><%= model_stock_fix_group2(model_stock)%></td>
+        <td><%= model_stock_fix_group3(model_stock)%></td>
       </tr>
     <% end %>
   </tbody>

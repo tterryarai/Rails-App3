@@ -60,7 +60,7 @@ def debug(action,message)
 end
 
 
-def fix_group1(ms)
+def model_stock_fix_group1(ms)
   if ms.group1 == 999 && ms.remark1.present?
     ms.remark1
   else
@@ -68,7 +68,7 @@ def fix_group1(ms)
   end
 end
 
-def fix_group2(ms)
+def model_stock_fix_group2(ms)
   if ms.group2 == 999 && ms.remark2.present?
     ms.remark2
   else
@@ -76,11 +76,27 @@ def fix_group2(ms)
   end
 end
 
-def fix_group3(ms)
+def model_stock_fix_group3(ms)
   if ms.group3 == 999 && ms.remark3.present?
     ms.remark3
   else
     t('model_stock.group3.elem' + ms.group3.to_s)
+  end
+end
+
+def model_stock_fix_scale(ms)
+  if ms.scale == 999 && ms.remark4.present?
+    ms.remark4
+  else
+    t('model_stock.scale.elem' + ms.scale.to_s)
+  end
+end
+
+def model_stock_fix_provider(ms)
+  if ms.provider == 999 && ms.remark5.present?
+    ms.remark5
+  else
+    t('model_stock.provider.elem' + ms.provider.to_s)
   end
 end
 

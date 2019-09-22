@@ -66,9 +66,9 @@
       <tr class=<%= cl %>>
         <td><%= link_to book.name, book %></td>
         <td><%= t('book.status.elem' + book.status.to_s)%></td>
-        <td><%= fix_group1(book) %>
-        <td><%= fix_group2(book) %>
-        <td><%= fix_group3(book) %>
+        <td><%= book_fix_group1(book) %>
+        <td><%= book_fix_group2(book) %>
+        <td><%= book_fix_group3(book) %>
       </tr>
     <% end %>
   </tbody>

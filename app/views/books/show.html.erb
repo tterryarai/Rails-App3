@@ -36,36 +36,18 @@
 
 <p>
   <strong><%= t('book.show.group1')%></strong>
-  <%= t('book.group1.elem' + @book.group1.to_s) %>
+  <%= book_fix_group1(@book)%>
 </p>
-<% if @book.remark1.present? %>
-<p>
-  <strong><%= t('book.show.remark1')%></strong>
-  <%= @book.remark1 %>
-</p>
-<% end %>
 
 <p>
   <strong><%= t('book.show.group2')%></strong>
-  <%= t('book.group2.elem' + @book.group2.to_s) %>
+  <%= book_fix_group2(@book)%>
 </p>
-<% if @book.remark2.present? %>
-<p>
-  <strong><%= t('book.show.remark2')%></strong>
-  <%= @book.remark2 %>
-</p>
-<% end %>
 
 <p>
   <strong><%= t('book.show.group3')%></strong>
-  <%= t('book.group3.elem' + @book.group3.to_s) %>
+  <%= book_fix_group3(@book)%>
 </p>
-<% if @book.remark3.present? %>
-<p>
-  <strong><%= t('book.show.remark3')%></strong>
-  <%= @book.remark3 %>
-</p>
-<% end %>
 
 <p>
   <strong><%= t('book.show.author')%></strong>
@@ -74,14 +56,8 @@
 
 <p>
   <strong><%= t('book.show.provider')%></strong>
-  <%= t('book_provider.elem' + @book.provider.to_s)%>
+  <%= book_fix_provider(@book)%>
 </p>
-<% if @book.remark5.present? %>
-<p>
-  <strong><%= t('book.show.remark5')%></strong>
-  <%= @book.remark5 %>
-</p>
-<% end %>
 
 <p>
   <strong><%= t('book.show.desc')%></strong>
