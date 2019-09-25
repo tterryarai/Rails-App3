@@ -48,6 +48,38 @@ $color5: #ccc; // mean: planning(not purchasing)
   }
 }
 
+////////////////// Menu ///////////////////
+
+.menu {
+  height: 50px;
+  clear: left;
+  margin-top: 10px;
+
+  .menu_link{
+    color: $black;
+
+    .menu_link:visited {color: $black;}
+
+    .menu_1 {
+      text-align: center;
+      width: 49%;
+      background-color: $color1;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      float: left;
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    .menu_1:hover {
+      background-color: $color2;
+      color: $white;
+    }
+  }
+}
 
 ////////////////// Operation ///////////////////
 

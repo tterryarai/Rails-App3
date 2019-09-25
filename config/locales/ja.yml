@@ -31,6 +31,9 @@
 
 ja:
   common:
+    app:
+      model_stock: "模型一覧"
+      book: "書籍一覧"
     button:
       register: "登録"
       edit: "編集"
