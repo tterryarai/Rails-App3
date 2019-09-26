@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     end
 
     # remember latest group1
-    if params[:grup1].present?
+    if params[:group1].present?
       @group1 = params[:group1]
       session[:group1] = params[:group1]
     else
