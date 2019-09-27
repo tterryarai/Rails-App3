@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     per = 80
 
     # order is follows;
-    order = 'group1, group2, group3, name'
+    order = 'group1, remark1, group2, remark2, group3, remark3, name'
 
     # get necessary attr only
     if @ua == 'Mobile'

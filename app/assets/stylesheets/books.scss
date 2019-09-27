@@ -28,6 +28,17 @@ $bcolor5: #ccc; // mean: planning(not purchasing)
 
 ////////////////// (TBD) ///////////////////
 
+.book_link {
+  text-decoration: none;
+  color: $black;
+}
+
+.book {
+  line-height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .book:hover {
   border: solid 2px $bcolor2;
   background-color: $bcolor2;
