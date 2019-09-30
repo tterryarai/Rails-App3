@@ -32,8 +32,10 @@
 ja:
   common:
     app:
-      model_stock: "模型一覧"
-      book: "書籍一覧"
+      model_stock: "模型"
+      book: "書籍"
+      stamp: "切手"
+      virtual_run: "ラン"
     button:
       register: "登録"
       edit: "編集"

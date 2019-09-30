@@ -62,7 +62,7 @@ $color5: #ccc; // mean: planning(not purchasing)
 
     .menu_1 {
       text-align: center;
-      width: 49%;
+      width: 24%;
       background-color: $color1;
       margin-left: 0.5%;
       margin-right: 0.5%;
@@ -165,6 +165,15 @@ $color5: #ccc; // mean: planning(not purchasing)
   }
 }
 
+
+////////////////// Contents: buttons ///////////////////
+
+.actions {
+  input {
+    font-size: 16px;
+    padding: 10px 30px 10px 30px;
+  }
+}
 
 ////////////////// Contents: status ///////////////////
 
