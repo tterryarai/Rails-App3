@@ -5,47 +5,42 @@ class ModelStocksController < ApplicationController
   # GET /model_stocks.json
   def index
 
+    # set group1 from params
+    group1_check
+
+    # set search keyword
+    keyword_check
+
+    # set page from params
+    page_control
+
     # per page(kaminari)
-    per = 80
+    per = 2
 
     # order is follows;
     order = 'group1, group2, group3, name'
 
     # get necessary attr only
     if @ua == 'Mobile'
-      select = 'id, name, status'
+      select = 'id, name, status, group1'
     else
       select = 'id, name, status, group1, group2, group3, remark1, remark2, remark3'
-    end
-
-    # remember latest page
-    if params[:page].present?
-      @page = params[:page]
-      session[:page] = params[:page]
-    else
-      @page = 1
-      session[:page] = 1
-    end
-
-    # remember latest group1
-    if params[:group1].present?
-      @group1 = params[:group1]
-      session[:group1] = params[:group1]
-    else
-      @group1 = '0'
-      session[:group1] = '0'
     end
 
     # Debug
     debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
     debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
+    debug 'index', 'search is set: ['+@keyword+']'
 
     #@model_stocks = ModelStock.all
     if @group1 != '0'
-      @model_stocks = ModelStock.select(select).where(['group1 = ?',@group1]).order(order).page(@page).per(per)
+      @model_stocks = ModelStock.select(select).where(['group1 = ?',@group1])
+    elsif @keyword.present?
+      @model_stocks = ModelStock.select(select).where(['name LIKE ?', '%'+@keyword+'%'])
     else
-      @model_stocks = ModelStock.select(select).order(order).page(@page).per(per)
+      @model_stocks = ModelStock.select(select)
     end
+    @model_stocks = @model_stocks.order(order).page(@page).per(per)
   end
 
   # GET /model_stocks/1

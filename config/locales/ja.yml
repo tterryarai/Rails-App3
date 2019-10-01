@@ -37,6 +37,7 @@ ja:
       stamp: "切手"
       virtual_run: "ラン"
     button:
+      search: "検索"
       register: "登録"
       edit: "編集"
       destroy: "削除"

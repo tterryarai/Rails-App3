@@ -114,6 +114,25 @@ $color5: #ccc; // mean: planning(not purchasing)
 }
 
 
+////////////////// Search Keyword ///////////////////
+
+.search {
+  height: 50px;
+  margin-top: 10px;
+
+  input[type='text'] {
+    font-size: 15px;
+    width: 30%;
+    padding: 14.5px 0px 14.5px 0px;
+  }
+
+  input[type='submit'] {
+    font-size: 15px;
+    padding: 11.5px 30px 11.5px 30px;
+    padding-right: 30px;
+  }
+}
+
 ////////////////// Pagination ///////////////////
 
 .pagination {
@@ -170,7 +189,7 @@ $color5: #ccc; // mean: planning(not purchasing)
 
 .actions {
   input {
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px 30px 10px 30px;
   }
 }

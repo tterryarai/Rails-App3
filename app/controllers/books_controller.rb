@@ -5,47 +5,42 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
 
+    # set group1 from params
+    group1_check
+
+    # set search keyword
+    keyword_check
+
+    # set page from params
+    page_control
+
     # per page(kaminari)
-    per = 80
+    per = 2
 
     # order is follows;
     order = 'group1, remark1, group2, remark2, group3, remark3, name'
 
     # get necessary attr only
     if @ua == 'Mobile'
-      select = 'id, name, status'
+      select = 'id, name, status, group1'
     else
       select = 'id, name, status, group1, group2, group3, remark1, remark2, remark3'
-    end
-
-    # remember latest page
-    if params[:page].present?
-      @page = params[:page]
-      session[:page] = params[:page]
-    else
-      @page = 1
-      session[:page] = 1
-    end
-
-    # remember latest group1
-    if params[:group1].present?
-      @group1 = params[:group1]
-      session[:group1] = params[:group1]
-    else
-      @group1 = '0'
-      session[:group1] = '0'
     end
 
     # Debug
     debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
     debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
+    debug 'index', 'search is set: ['+@keyword+']'
 
     #@books = Book.all
     if @group1 != '0'
-      @books = Book.select(select).where(['group1 = ?', @group1]).order(order).page(@page).per(per)
+      @books = Book.select(select).where(['group1 = ?', @group1])
+    elsif @keyword.present?
+      @books = Book.select(select).where(['name LIKE ?', '%'+@keyword+'%'])
     else
-      @books = Book.select(select).order(order).page(@page).per(per)
+      @books = Book.select(select)
     end
+      @books = @books.order(order).page(@page).per(per)
   end
 
   # GET /books/1
