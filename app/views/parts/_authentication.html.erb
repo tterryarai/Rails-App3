@@ -3,6 +3,7 @@
   <%= link_to edit_user_registration_path, class: 'auth_link' do %>
     <div class='auth_1'><p><%= t('common.devise.user_edit')%></p></div>
   <% end %>
+  <div class="gap"></div>
   <%= link_to destroy_user_session_path, method: :delete, class: 'auth_link' do %>
     <div class='auth_1'><p><%= t('common.devise.logout')%></p></div>
   <% end %>

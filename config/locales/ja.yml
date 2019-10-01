@@ -60,6 +60,7 @@ ja:
       password_confirm: "パスワード（確認用）"
       current_password: "現在のパスワード"
     other:
+      no_items: "データがありません"
       unrecognized_device: "対応していないデバイスです"
   views:
     pagination:

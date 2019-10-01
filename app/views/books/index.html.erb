@@ -7,31 +7,30 @@
   <% end %>
 
   <% Book.group1_list.each do |g| %>
+    <div class="gap"></div>
     <% if g == 0 %>
-
-    <%= link_to books_path, class: 'operation_link' do %>
-      <div class='operation_1 book_operation_1'>
-        <p><%= t('book.group1.elem_all')%></p>
-      </div>
-    <% end %>
-
+      <%= link_to books_path, class: 'operation_link' do %>
+        <div class='operation_1 book_operation_1'>
+          <p><%= t('book.group1.elem_all')%></p>
+        </div>
+      <% end %>
     <% else %>
-
-    <%= link_to books_path(group1: g), class: 'operation_link' do %>
-      <div class='operation_1 book_operation_1'>
-        <p><%= t('book.group1.elem' + g.to_s)%></p>
-      </div>
-    <% end %>
-
+      <%= link_to books_path(group1: g), class: 'operation_link' do %>
+        <div class='operation_1 book_operation_1'>
+          <p><%= t('book.group1.elem' + g.to_s)%></p>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
 
 <%= render 'parts/books_search' %>
 
-<%= render 'parts/books_pagination' %>
+<% if @books.present? %>
 
-<% if @ua == 'Mobile' %>
+  <%= render 'parts/books_pagination' %>
+
+  <% if @ua == 'Mobile' %>
 
 <div class='b_grid'>
   <% @books.each do |book| %>
@@ -45,7 +44,7 @@
   <% end %>
 </div>
 
-<% elsif @ua == 'Desktop' %>
+  <% elsif @ua == 'Desktop' %>
 
 <table class='table'>
   <thead>
@@ -57,7 +56,6 @@
       <th><%= t('book.index.group3')%></th>
     </tr>
   </thead>
-
   <tbody>
     <% @books.each do |book| %>
       <% cl="status_" + book.status.to_s %>
@@ -72,8 +70,13 @@
   </tbody>
 </table>
 
+  <% else %>
+    <%= t('common.other.unrecognized_devise')%>
+  <% end %>
+
+  <%= render 'parts/books_pagination' %>
 <% else %>
-  <%= t('common.other.unrecognized_devise')%>
+  <%= t('common.other.no_items')%>
 <% end %>
 
-<%= render 'parts/books_pagination' %>
+

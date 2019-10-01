@@ -15,24 +15,31 @@ $color4: #ddf; // mean: completed(built)/background(desktop)
 $color5: #ccc; // mean: planning(not purchasing)
 
 
+////////////////// Common Parts ///////////////////
+
+.gap {
+  width: 1%;
+  height: 100%;
+//  background-color: $black;
+  float: left;
+}
+
 ////////////////// Authentication ///////////////////
 
 .auth {
   height: 50px;
+  width: 100%;
   clear: left;
   margin-top: 10px;
 
   .auth_link{
     color: $black;
-
     .auth_link:visited {color: $black;}
 
     .auth_1 {
       text-align: center;
-      width: 49%;
+      width: 49.5%;
       background-color: $color1;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
       float: left;
 
       p {
@@ -62,10 +69,8 @@ $color5: #ccc; // mean: planning(not purchasing)
 
     .menu_1 {
       text-align: center;
-      width: 24%;
+      width: 24.25%;
       background-color: $color1;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
       float: left;
 
       p {
@@ -96,8 +101,6 @@ $color5: #ccc; // mean: planning(not purchasing)
       height: 100%;
       text-align: center;
       background-color: $color1;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
       float: left;
 
       p {

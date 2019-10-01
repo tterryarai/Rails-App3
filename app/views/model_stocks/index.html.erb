@@ -7,31 +7,30 @@
   <% end %>
 
   <% ModelStock.group1_list.each do |g| %>
+    <div class="gap"></div>
     <% if g == 0 %>
-
-    <%= link_to model_stocks_path, class: 'operation_link' do %>
-      <div class="operation_1 model_stock_operation_1">
-        <p><%= t('model_stock.group1.elem_all')%></p>
-      </div>
-    <% end %>
-
+      <%= link_to model_stocks_path, class: 'operation_link' do %>
+        <div class="operation_1 model_stock_operation_1">
+          <p><%= t('model_stock.group1.elem_all')%></p>
+        </div>
+      <% end %>
     <% else %>
-
-    <%= link_to model_stocks_path(group1: g), class: 'operation_link' do %>
-      <div class="operation_1 model_stock_operation_1">
-        <p><%= t('model_stock.group1.elem' + g.to_s)%></p>
-      </div>
-    <% end %>
-
+      <%= link_to model_stocks_path(group1: g), class: 'operation_link' do %>
+        <div class="operation_1 model_stock_operation_1">
+          <p><%= t('model_stock.group1.elem' + g.to_s)%></p>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
 
 <%= render 'parts/model_stocks_search' %>
 
-<%= render 'parts/model_stocks_pagination' %>
+<% if @model_stocks.present? %>
 
-<% if @ua == 'Mobile' %>
+  <%= render 'parts/model_stocks_pagination' %>
+
+  <% if @ua == 'Mobile' %>
 
 <div class='ms_grid'>
   <% @model_stocks.each do |model_stock| %>
@@ -45,7 +44,7 @@
   <% end %>
 </div>
 
-<% elsif @ua == 'Desktop' %>
+  <% elsif @ua == 'Desktop' %>
 
 <table class='table'>
   <thead>
@@ -72,9 +71,12 @@
   </tbody>
 </table>
 
-<% else %>
-  <%= t('common.other.unrecognized_device')%>
-<% end %>
+  <% else %>
+    <%= t('common.other.unrecognized_device')%>
+  <% end %>
 
-<%= render 'parts/model_stocks_pagination' %>
+  <%= render 'parts/model_stocks_pagination' %>
+<% else %>
+  <%= t('common.other.no_items')%>
+<% end %>
 
