@@ -29,9 +29,7 @@
 
 <%= render 'parts/model_stocks_search' %>
 
-<div class="pagination">
-  <%= paginate @model_stocks, window: 0 %>
-</div>
+<%= render 'parts/model_stocks_pagination' %>
 
 <% if @ua == 'Mobile' %>
 
@@ -40,7 +38,7 @@
   <div class='ms_item'>
     <%= link_to model_stock, class: 'model_stock_link' do %>
       <div class='model_stock <%= "status_" + model_stock.status.to_s %>'>
-        <%= model_stock.name %>
+        <%= model_stock.name %><%= ' [' + t('model_stock.group1.elem'+model_stock.group1.to_s) + ']' %>
       </div>
     <% end %>
   </div>
@@ -73,12 +71,10 @@
     <% end %>
   </tbody>
 </table>
-<br>
 
 <% else %>
   <%= t('common.other.unrecognized_device')%>
 <% end %>
 
-<div class="pagination">
-  <%= paginate @model_stocks, window: 0 %>
-</div>
+<%= render 'parts/model_stocks_pagination' %>
+

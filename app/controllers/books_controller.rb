@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     page_control
 
     # per page(kaminari)
-    per = 2
+    @per = 80
 
     # order is follows;
     order = 'group1, remark1, group2, remark2, group3, remark3, name'
@@ -40,7 +40,7 @@ class BooksController < ApplicationController
     else
       @books = Book.select(select)
     end
-      @books = @books.order(order).page(@page).per(per)
+      @books = @books.order(order).page(@page).per(@per)
   end
 
   # GET /books/1

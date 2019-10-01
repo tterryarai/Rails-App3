@@ -29,9 +29,7 @@
 
 <%= render 'parts/books_search' %>
 
-<div class='pagination'>
-  <%= paginate @books, window: 0 %>
-</div>
+<%= render 'parts/books_pagination' %>
 
 <% if @ua == 'Mobile' %>
 
@@ -40,7 +38,7 @@
   <div class='b_item'>
     <%= link_to book, class: 'book_link' do %>
       <div class='book <%= "status_" + book.status.to_s %>'>
-        <%= book.name %>
+        <%= book.name %><%= ' [' + t('book.group1.elem'+book.group1.to_s) + ']' %>
       </div>
     <% end %>
   </div>
@@ -73,12 +71,9 @@
     <% end %>
   </tbody>
 </table>
-<br>
 
 <% else %>
   <%= t('common.other.unrecognized_devise')%>
 <% end %>
 
-<div class='pagination'>
-  <%= paginate @books, window: 0 %>
-</div>
+<%= render 'parts/books_pagination' %>

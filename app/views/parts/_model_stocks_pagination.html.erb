@@ -1,0 +1,5 @@
+<% if ModelStock.count > @per %>
+<div class="pagination">
+  <%= paginate @model_stocks, window: 0 %>
+</div>
+<% end %>

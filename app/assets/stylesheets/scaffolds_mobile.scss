@@ -4,6 +4,8 @@
   min-width: 350px;
 
 .ms_grid {
+  float: left;
+  padding-bottom: 10px;
 
   .ms_item {
     height: 53px;
@@ -22,6 +24,8 @@
 }
 
 .b_grid {
+  float: left;
+  padding-bottom: 10px;
 
   .b_item {
     height: 53px;

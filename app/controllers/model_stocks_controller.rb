@@ -15,7 +15,7 @@ class ModelStocksController < ApplicationController
     page_control
 
     # per page(kaminari)
-    per = 2
+    @per = 80
 
     # order is follows;
     order = 'group1, group2, group3, name'
@@ -40,7 +40,7 @@ class ModelStocksController < ApplicationController
     else
       @model_stocks = ModelStock.select(select)
     end
-    @model_stocks = @model_stocks.order(order).page(@page).per(per)
+    @model_stocks = @model_stocks.order(order).page(@page).per(@per)
   end
 
   # GET /model_stocks/1

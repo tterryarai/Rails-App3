@@ -11,15 +11,25 @@ body {
   line-height: 18px;
 
   #header {
+    width: 100%;
     border: solid 2px $hdcolor;
     background-color: $hdcolor;
-    padding-left: 10px;
+
+    h1 {
+      margin-left: 10px;
+    }
   }
 
   #footer {
+    width: 100%;
+    float: left;
     border: solid 2px $ftcolor;
     background-color: $ftcolor;
-    padding-left: 10px;
+    margin-top: 10px;
+
+    p {
+      margin-left: 10px;
+    }
   }
 
 }

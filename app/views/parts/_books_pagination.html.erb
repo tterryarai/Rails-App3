@@ -1,0 +1,5 @@
+<% if Book.count > @per %>
+<div class="pagination">
+  <%= paginate @books, window: 0 %>
+</div>
+<% end %>
