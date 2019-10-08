@@ -1,0 +1,82 @@
+<%= form_with(model: stamp, local: true) do |form| %>
+  <% if stamp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stamp.errors.count, "error") %> prohibited this stamp from being saved:</h2>
+
+      <ul>
+      <% stamp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_area :desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group1 %>
+    <%= form.number_field :group1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group2 %>
+    <%= form.number_field :group2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group3 %>
+    <%= form.number_field :group3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issue_date %>
+    <%= form.text_field :issue_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_path %>
+    <%= form.text_field :image_path %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark1 %>
+    <%= form.text_field :remark1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark2 %>
+    <%= form.text_field :remark2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark3 %>
+    <%= form.text_field :remark3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark4 %>
+    <%= form.text_field :remark4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark5 %>
+    <%= form.text_field :remark5 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

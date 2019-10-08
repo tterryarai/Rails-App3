@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stamps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Status</th>
+      <th>Group1</th>
+      <th>Group2</th>
+      <th>Group3</th>
+      <th>Issue date</th>
+      <th>Image path</th>
+      <th>Remark1</th>
+      <th>Remark2</th>
+      <th>Remark3</th>
+      <th>Remark4</th>
+      <th>Remark5</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stamps.each do |stamp| %>
+      <tr>
+        <td><%= stamp.name %></td>
+        <td><%= stamp.desc %></td>
+        <td><%= stamp.status %></td>
+        <td><%= stamp.group1 %></td>
+        <td><%= stamp.group2 %></td>
+        <td><%= stamp.group3 %></td>
+        <td><%= stamp.issue_date %></td>
+        <td><%= stamp.image_path %></td>
+        <td><%= stamp.remark1 %></td>
+        <td><%= stamp.remark2 %></td>
+        <td><%= stamp.remark3 %></td>
+        <td><%= stamp.remark4 %></td>
+        <td><%= stamp.remark5 %></td>
+        <td><%= link_to 'Show', stamp %></td>
+        <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
+        <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stamp', new_stamp_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stamps
   resources :books
   devise_for :users
   resources :model_stocks
