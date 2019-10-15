@@ -4,6 +4,10 @@ class StampsController < ApplicationController
   # GET /stamps
   # GET /stamps.json
   def index
+
+    # per page(kaminari)
+    @per = 80
+
     @stamps = Stamp.all
   end
 

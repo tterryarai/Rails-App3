@@ -1,0 +1,5 @@
+<% if Stamp.count > @per %>
+<div class="pagination">
+  <%= paginate @stamps, window: 0 %>
+</div>
+<% end %>

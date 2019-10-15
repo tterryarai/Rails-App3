@@ -43,4 +43,24 @@
   }
 }
 
+.s_grid {
+  float: left;
+  padding-bottom: 10px;
+
+  .s_item {
+    height: 53px;
+    padding: 3px;
+    min-width: 24%;
+    float: left;
+
+    .stamp {
+      line-height: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 0px;
+      border-radius: 10px;
+    }
+  }
+}
+
 }
