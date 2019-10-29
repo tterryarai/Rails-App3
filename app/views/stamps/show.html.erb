@@ -1,18 +1,37 @@
-<p id="notice"><%= notice %></p>
+
+<% cl = 'operation_1 stamp_operation_1' %>
+
+<div class='operation stamp_operation'>
+  <%= link_to edit_stamp_path(@stamp), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.edit')%></p>
+    </div>
+  <% end %>
+  <%= link_to @stamp, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.destroy')%></p>
+    </div>
+  <% end %>
+  <%= link_to stamps_path(page: @page, group1: @group1), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.back')%></p>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'show', 'page is set:[' + @page.to_s + ']' %>
+<% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
+
+<div class='s_details'>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('stamp.show.name')%></strong>
   <%= @stamp.name %>
 </p>
 
 <p>
-  <strong>Desc:</strong>
-  <%= @stamp.desc %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @stamp.status %>
+  <strong><%= t('stamp.show.status')%></strong>
+  <%= t('stamp.status.elem' + @stamp.status.to_s) %>
 </p>
 
 <p>
@@ -64,6 +83,12 @@
   <strong>Remark5:</strong>
   <%= @stamp.remark5 %>
 </p>
+
+<p>
+  <strong><%= t('stamp.show.desc')%></strong>
+  <%= @stamp.desc %>
+</p>
+
 
 <%= link_to 'Edit', edit_stamp_path(@stamp) %> |
 <%= link_to 'Back', stamps_path %>
