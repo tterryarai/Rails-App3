@@ -40,7 +40,8 @@ class BooksController < ApplicationController
     else
       @books = Book.select(select)
     end
-      @books = @books.order(order).page(@page).per(@per)
+
+    @books = @books.order(order).page(@page).per(@per)
   end
 
   # GET /books/1

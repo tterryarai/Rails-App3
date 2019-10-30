@@ -5,10 +5,43 @@ class StampsController < ApplicationController
   # GET /stamps.json
   def index
 
+    # set group1 from params
+    group1_check
+
+    # set search keyword
+    keyword_check
+
+    #set page from params
+    page_control
+
     # per page(kaminari)
     @per = 80
 
-    @stamps = Stamp.all
+    # order is follows;
+    order = 'group1, remark1, group2, remark2, group3, remark3, name'
+
+    # get necessary attr only
+    if @ua == 'Mobile'
+      select = 'id, name, status, group1, remark1, group2, remark2, group3, remark3'
+    else
+      select = 'id, name, status, group1, remark1, group2, remark2, group3, remark3'
+    end
+
+    # Debug
+    debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
+    debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
+    debug 'index', 'search is set: ['+@keyword+']'
+
+    #@stamps = Stamp.all
+    if @group1 != '0'
+      @stamps = Stamp.select(select).where(['group1 = ?', @group1])
+    elsif @keyword.present?
+      @stamps = Stamp.select(select).where(['name LIKE ?', '%'+@keywork+'%'])
+    else
+      @stamps = Stamp.select(select)
+    end
+
+    @stamps = @stamps.order(order).page(@page).per(@per)
   end
 
   # GET /stamps/1
@@ -32,7 +65,7 @@ class StampsController < ApplicationController
 
     respond_to do |format|
       if @stamp.save
-        format.html { redirect_to @stamp, notice: 'Stamp was successfully created.' }
+        format.html { redirect_to @stamp, notice: t('common.message.created_success')}
         format.json { render :show, status: :created, location: @stamp }
       else
         format.html { render :new }
@@ -46,7 +79,7 @@ class StampsController < ApplicationController
   def update
     respond_to do |format|
       if @stamp.update(stamp_params)
-        format.html { redirect_to @stamp, notice: 'Stamp was successfully updated.' }
+        format.html { redirect_to @stamp, notice: t('common.message.updated_success')}
         format.json { render :show, status: :ok, location: @stamp }
       else
         format.html { render :edit }
@@ -60,7 +93,7 @@ class StampsController < ApplicationController
   def destroy
     @stamp.destroy
     respond_to do |format|
-      format.html { redirect_to stamps_url, notice: 'Stamp was successfully destroyed.' }
+      format.html { redirect_to stamps_url, notice: t('common.message.destroyed_success')}
       format.json { head :no_content }
     end
   end

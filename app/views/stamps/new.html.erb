@@ -1,5 +1,13 @@
-<h1>New Stamp</h1>
+<div class='operation stamp_operation'>
+  <%= link_to stamps_path(page: @page, group1: @group1), class: 'operation_link' do %>
+    <div class='operation_1 stamp_operation_1'>
+      <p><%= t('common.button.back')%></p>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'new', 'page is set:[' + @page.to_s + ']' %>
+<% debug 'new', 'group1 is set:[' + @group1.to_s + ']' %>
 
 <%= render 'form', stamp: @stamp %>
 
-<%= link_to 'Back', stamps_path %>

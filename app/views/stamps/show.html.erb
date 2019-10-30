@@ -22,7 +22,7 @@
 <% debug 'show', 'page is set:[' + @page.to_s + ']' %>
 <% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
 
-<div class='s_details'>
+<div class='stamp_details'>
 
 <p>
   <strong><%= t('stamp.show.name')%></strong>
@@ -35,52 +35,37 @@
 </p>
 
 <p>
-  <strong>Group1:</strong>
-  <%= @stamp.group1 %>
+  <strong><%= t('stamp.show.group1')%></strong>
+  <%= stamp_fix_group1(@stamp)%>
 </p>
 
 <p>
-  <strong>Group2:</strong>
-  <%= @stamp.group2 %>
+  <strong><%= t('stamp.show.group2')%></strong>
+  <%= stamp_fix_group2(@stamp)%>
 </p>
 
 <p>
-  <strong>Group3:</strong>
-  <%= @stamp.group3 %>
+  <strong><%= t('stamp.show.group3')%></strong>
+  <%= stamp_fix_group3(@stamp)%>
 </p>
 
 <p>
-  <strong>Issue date:</strong>
+  <strong><%= t('stamp.show.issue_date')%></strong>
   <%= @stamp.issue_date %>
 </p>
 
 <p>
-  <strong>Image path:</strong>
+  <strong><%= t('stamp.show.image_path')%></strong>
   <%= @stamp.image_path %>
 </p>
 
 <p>
-  <strong>Remark1:</strong>
-  <%= @stamp.remark1 %>
-</p>
-
-<p>
-  <strong>Remark2:</strong>
-  <%= @stamp.remark2 %>
-</p>
-
-<p>
-  <strong>Remark3:</strong>
-  <%= @stamp.remark3 %>
-</p>
-
-<p>
-  <strong>Remark4:</strong>
+  <strong><%= t('stamp.show.remark4')%></strong>
   <%= @stamp.remark4 %>
 </p>
 
 <p>
-  <strong>Remark5:</strong>
+  <strong><%= t('stamp.show.remark5')%></strong>
   <%= @stamp.remark5 %>
 </p>
 
@@ -89,6 +74,5 @@
   <%= @stamp.desc %>
 </p>
 
+</div>
 
-<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
-<%= link_to 'Back', stamps_path %>
