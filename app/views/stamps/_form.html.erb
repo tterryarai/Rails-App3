@@ -19,6 +19,11 @@
   </div>
 
   <div class="field">
+    <%= t('stamp.edit.price')%>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
     <%= t('stamp.edit.status')%>
     <%= form.select :status, options_for_select(stamp_status_list, @stamp.status)%>
   </div>

@@ -4,10 +4,9 @@ class Stamp < ApplicationRecord
 
 # also see ja.yml for each setting
 
-STATUSES = [0,1,2]
-# 0:未定
+STATUSES = [1,4]
 # 1:予定
-# 2:購入済
+# 4:購入済
 
 GROUP1 = [0,1,2,3,4,5,6,7,8,9,10,999]
 # 0:（なし）

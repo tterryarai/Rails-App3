@@ -262,10 +262,11 @@ ja:
   stamp:
     index:
       name: "名称"
-      status: "状態"
+      price: "額面"
       group1: "区分1"
       group2: "区分2"
       group3: "区分3"
+      price: "額面"
       remark1: "区分1"
       remark2: "区分2"
       remark3: "区分3"
@@ -274,6 +275,7 @@ ja:
       desc: "詳細"
     show:
       name: "名称"
+      price: "額面"
       status: "状態"
       group1: "区分1"
       group2: "区分2"
@@ -288,6 +290,7 @@ ja:
       desc: "詳細"
     edit:
       name: "名称"
+      price: "額面"
       status: "状態"
       group1: "区分1"
       group2: "区分2"
@@ -301,9 +304,8 @@ ja:
       remark5: "ID2"
       desc: "詳細"
     status:
-      elem0: "未定"
       elem1: "予定"
-      elem2: "購入済"
+      elem4: "購入済"
     group1:
       elem0: "(なし)"
       elem1: "JP"

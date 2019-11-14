@@ -17,14 +17,18 @@ class StampsController < ApplicationController
     # per page(kaminari)
     @per = 80
 
-    # order is follows;
+    # order is;
     order = 'group1, remark1, group2, remark2, group3, remark3, name'
+
+    # terget attribute for search and keyword is;
+    search_target = 'name LIKE ? or remark1 LIKE ? or remark2 LIKE ? or remark3 LIKE ? or remark4 LIKE ? or remark5 LIKE ?'
+    key = '%'+@keyword+'%'
 
     # get necessary attr only
     if @ua == 'Mobile'
-      select = 'id, name, status, group1, remark1, group2, remark2, group3, remark3'
+      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3'
     else
-      select = 'id, name, status, group1, remark1, group2, remark2, group3, remark3'
+      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3'
     end
 
     # Debug
@@ -36,7 +40,7 @@ class StampsController < ApplicationController
     if @group1 != '0'
       @stamps = Stamp.select(select).where(['group1 = ?', @group1])
     elsif @keyword.present?
-      @stamps = Stamp.select(select).where(['name LIKE ?', '%'+@keywork+'%'])
+      @stamps = Stamp.select(select).where([search_target, key,key,key,key,key,key])
     else
       @stamps = Stamp.select(select)
     end
@@ -106,6 +110,6 @@ class StampsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stamp_params
-      params.require(:stamp).permit(:name, :desc, :status, :group1, :group2, :group3, :issue_date, :image_path, :remark1, :remark2, :remark3, :remark4, :remark5)
+      params.require(:stamp).permit(:name, :desc, :status, :price, :group1, :group2, :group3, :issue_date, :image_path, :remark1, :remark2, :remark3, :remark4, :remark5)
     end
 end

@@ -37,7 +37,9 @@
   <div class='s_item'>
     <%= link_to stamp, class: 'stamp_link' do %>
       <div class='stamp <%= "status_" + stamp.status.to_s %>'>
-        <%= stamp.name %><%= ' [' + t('stamp.group1.elem'+stamp.group1.to_s) + ']' %>
+        <%= stamp.name %>
+        <%= stamp.price %>
+        <%= ' [' + t('stamp.group1.elem'+stamp.group1.to_s) + ']' %>
       </div>
     <% end %>
   </div>
@@ -50,6 +52,7 @@
   <thead>
     <tr>
       <th><%= t('stamp.index.name')%></th>
+      <th><%= t('stamp.index.price')%></th>
       <th><%= t('stamp.index.status')%></th>
       <th><%= t('stamp.index.group1')%></th>
       <th><%= t('stamp.index.group2')%></th>
@@ -61,6 +64,7 @@
       <% cl="status_" + stamp.status.to_s %>
       <tr class=<%= cl %>>
         <td><%= link_to stamp.name, stamp %></td>
+        <td><%= stamp.price %></td>
         <td><%= t('stamp.status.elem' + stamp.status.to_s)%></td>
         <td><%= stamp_fix_group1(stamp) %>
         <td><%= stamp_fix_group2(stamp) %>
