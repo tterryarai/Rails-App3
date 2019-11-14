@@ -263,10 +263,10 @@ ja:
     index:
       name: "名称"
       price: "額面"
+      status: "状態"
       group1: "区分1"
       group2: "区分2"
       group3: "区分3"
-      price: "額面"
       remark1: "区分1"
       remark2: "区分2"
       remark3: "区分3"
