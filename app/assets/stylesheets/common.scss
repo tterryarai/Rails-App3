@@ -127,7 +127,8 @@ $color5: #ccc; // mean: planning(not purchasing)
 
   input[type='text'] {
     font-size: 15px;
-    width: 30%;
+    width: 70%;
+    max-width: 350px;
     padding: 14.5px 0px 14.5px 0px;
   }
 
