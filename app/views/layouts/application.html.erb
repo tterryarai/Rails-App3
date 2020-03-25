@@ -17,10 +17,15 @@
   <% end %>
 
   <body <%= css.html_safe %>>
+
     <%= render '/parts/header' %>
+
     <%= render '/parts/message' %>
-    <%= render '/parts/authentication' %>
-    <%= render '/parts/menu' %>
+
+    <% if user_signed_in? %>
+      <%= render '/parts/authentication' %>
+      <%= render '/parts/menu' %>
+    <% end %>
 
     <%= yield %>
 
