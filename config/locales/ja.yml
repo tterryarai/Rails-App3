@@ -270,8 +270,8 @@ ja:
       remark1: "区分1"
       remark2: "区分2"
       remark3: "区分3"
-      remark4: "ID1"
-      remark5: "ID2"
+      remark4: "ID"
+      remark5: "サブグループ"
       desc: "詳細"
     show:
       name: "名称"
@@ -285,8 +285,8 @@ ja:
       remark1: "その他の区分1"
       remark2: "その他の区分2"
       remark3: "その他の区分3"
-      remark4: "ID1"
-      remark5: "ID2"
+      remark4: "ID"
+      remark5: "サブグループ"
       desc: "詳細"
     edit:
       name: "名称"
@@ -300,8 +300,8 @@ ja:
       remark1: "区分1(記入)"
       remark2: "区分2(記入)"
       remark3: "区分3(記入)"
-      remark4: "ID1"
-      remark5: "ID2"
+      remark4: "ID"
+      remark5: "サブグループ"
       desc: "詳細"
     status:
       elem1: "予定"
@@ -340,7 +340,7 @@ ja:
     remark1: "その他の区分1"
     remark2: "その他の区分2"
     remark3: "その他の区分3"
-    remark4: "ID1"
-    remark5: "ID2"
+    remark4: "ID"
+    remark5: "サブグループ"
 
 

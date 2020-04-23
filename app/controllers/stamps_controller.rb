@@ -17,9 +17,6 @@ class StampsController < ApplicationController
     # per page(kaminari)
     @per = 80
 
-    # order is;
-    order = 'group1, remark1, group2, remark2, group3, remark3, name'
-
     # terget attribute for search and keyword is;
     search_target = 'name LIKE ? or remark1 LIKE ? or remark2 LIKE ? or remark3 LIKE ? or remark4 LIKE ? or remark5 LIKE ?'
     key = '%'+@keyword+'%'
@@ -27,8 +24,12 @@ class StampsController < ApplicationController
     # get necessary attr only
     if @ua == 'Mobile'
       select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3'
+    # order is;
+    order = 'group1, remark1, group2, remark2, group3, remark3, name'
     else
-      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3'
+      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3, remark4, remark5'
+    # order is;
+    order = 'group1, remark1, group2, remark2, group3, remark3, remark4, remark5, name'
     end
 
     # Debug

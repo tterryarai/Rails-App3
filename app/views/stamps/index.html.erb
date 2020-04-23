@@ -57,6 +57,8 @@
       <th><%= t('stamp.index.group1')%></th>
       <th><%= t('stamp.index.group2')%></th>
       <th><%= t('stamp.index.group3')%></th>
+      <th><%= t('stamp.index.remark5')%></th>
+      <th><%= t('stamp.index.remark4')%></th>
     </tr>
   </thead>
   <tbody>
@@ -66,9 +68,11 @@
         <td><%= link_to stamp.name, stamp %></td>
         <td><%= stamp.price %></td>
         <td><%= t('stamp.status.elem' + stamp.status.to_s)%></td>
-        <td><%= stamp_fix_group1(stamp) %>
-        <td><%= stamp_fix_group2(stamp) %>
-        <td><%= stamp_fix_group3(stamp) %>
+        <td><%= stamp_fix_group1(stamp) %></td>
+        <td><%= stamp_fix_group2(stamp) %></td>
+        <td><%= stamp_fix_group3(stamp) %></td>
+        <td><%= stamp.remark5 %></td>
+        <td><%= stamp.remark4 %></td>
       </tr>
     <% end %>
   </tbody>
