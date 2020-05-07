@@ -304,8 +304,9 @@ ja:
       remark5: "サブグループ"
       desc: "詳細"
     status:
-      elem1: "予定"
-      elem4: "購入済"
+      elem1: "未"
+      elem4: "所持"
+      elem5: "所持▲"
     group1:
       elem0: "(なし)"
       elem1: "JP"
