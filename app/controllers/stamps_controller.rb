@@ -27,7 +27,7 @@ class StampsController < ApplicationController
     # order is;
     order = 'group1, remark1, group2, remark2, group3, remark3, name'
     else
-      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3, remark4, remark5'
+      select = 'id, name, price, status, group1, remark1, group2, remark2, group3, remark3, remark4, remark5, leaf_id'
     # order is;
     order = 'group1, remark1, group2, remark2, group3, remark3, remark4, remark5, name'
     end
@@ -111,6 +111,6 @@ class StampsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stamp_params
-      params.require(:stamp).permit(:name, :desc, :status, :price, :group1, :group2, :group3, :issue_date, :image_path, :remark1, :remark2, :remark3, :remark4, :remark5)
+      params.require(:stamp).permit(:name, :desc, :status, :price, :group1, :group2, :group3, :issue_date, :image_path, :remark1, :remark2, :remark3, :remark4, :remark5, :leaf_id)
     end
 end

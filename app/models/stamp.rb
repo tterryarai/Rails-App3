@@ -1,4 +1,5 @@
 class Stamp < ApplicationRecord
+  belongs_to :leaf
 
 # constant
 
@@ -6,13 +7,13 @@ class Stamp < ApplicationRecord
 
 STATUSES = [1,4,5]
 # 1:未購入
-# 2:（未設定）
-# 3:（未設定）
-# 4:購入済（未使用）
-# 5:購入済（使用済）
+# 2:（未使用）
+# 3:（未使用）
+# 4:購入済（未使用品）
+# 5:購入済（使用済品）
 
-GROUP1 = [0,1,2,3,4,5,6,7,8,9,10,999]
-# 0:（なし）
+GROUP1 = [1,2,3,4,5,6,7,8,9,10,999]
+# 0:（なし）（未使用）
 # 1:JP
 # 2:Ryukyu
 # 3:GB
@@ -25,8 +26,8 @@ GROUP1 = [0,1,2,3,4,5,6,7,8,9,10,999]
 # 10:Jersey
 # 999:その他（remark1に記入）
 
-GROUP2 = [0,1,2,3,4,5,6,999]
-# 0:（なし）
+GROUP2 = [1,2,3,4,5,6,999]
+# 0:（なし）（未使用）
 # 1:普通切手/definitives
 # 2:記念切手/commemorative
 # 3:年賀切手
@@ -38,10 +39,10 @@ GROUP2 = [0,1,2,3,4,5,6,999]
 # 9:Christmas
 # 999:その他（remark2に記入）
 
-GROUP3 = [0,999]
-# 0:（なし）
-# 1:単片（不使用）
-# 2:シート（不使用）
+GROUP3 = [999]
+# 0:（なし）（未使用）
+# 1:単片（未使用）
+# 2:シート（未使用）
 # 999:その他（remark3に記入）
 
 def self.status_list
@@ -58,10 +59,6 @@ end
 
 def self.group3_list
   GROUP3
-end
-
-def self.provider_list
-  PROVIDERS
 end
 
 end

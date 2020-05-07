@@ -1,0 +1,63 @@
+
+<% cl = 'operation_1 leaf_operation_1' %>
+
+<div class='operation leaf_operation'>
+  <%= link_to edit_leaf_path(@leaf), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.edit')%></p>
+    </div>
+  <% end %>
+  <%= link_to @leaf, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.destroy')%></p>
+    </div>
+  <% end %>
+  <%= link_to leafs_path(group1: @group1), class: 'operation_link' do %>
+    <div class="<%= cl %>">
+      <p><%= t('common.button.back')%></p>
+    </div>
+  <% end %>
+</div>
+
+<% debug 'show', 'group1 is set:[' + @group1.to_s + ']' %>
+
+<div class='leaf_details'>
+
+<p>
+  <strong><%= t('leaf.show.name')%></strong>
+  <%= @leaf.name %>
+</p>
+
+<p>
+  <strong><%= t('leaf.show.period')%></strong>
+  <%= @leaf.period %>
+</p>
+
+<p>
+  <strong><%= t('leaf.show.status')%></strong>
+  <%= t('leaf.status.elem' + @leaf.status.to_s) %>
+</p>
+
+<p>
+  <strong><%= t('leaf.show.group1')%></strong>
+  <%= leaf_fix_group1(@leaf)%>
+</p>
+
+<p>
+  <strong><%= t('leaf.show.id')%></strong>
+  <%= @leaf.id.to_s %>
+</p>
+
+<p>
+  <strong><%= t('leaf.show.desc')%></strong>
+  <%= @leaf.desc %>
+</p>
+
+<p>
+  <% @leaf.stamps.each do |stamp| %>
+    <%= stamp.name %>
+    <BR>
+  <% end %>
+</p>
+
+</div>

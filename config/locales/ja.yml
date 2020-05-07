@@ -35,6 +35,7 @@ ja:
       model_stock: "模型"
       book: "書籍"
       stamp: "切手"
+      leaf: "切手集"
       virtual_run: "ラン"
     button:
       search: "検索"
@@ -272,6 +273,7 @@ ja:
       remark3: "区分3"
       remark4: "ID"
       remark5: "サブグループ"
+      leaf_id: "リーフID"
       desc: "詳細"
     show:
       name: "名称"
@@ -287,6 +289,7 @@ ja:
       remark3: "その他の区分3"
       remark4: "ID"
       remark5: "サブグループ"
+      leaf_id: "リーフID"
       desc: "詳細"
     edit:
       name: "名称"
@@ -302,6 +305,7 @@ ja:
       remark3: "区分3(記入)"
       remark4: "ID"
       remark5: "サブグループ"
+      leaf_id: "リーフID"
       desc: "詳細"
     status:
       elem1: "未"
@@ -344,4 +348,41 @@ ja:
     remark4: "ID"
     remark5: "サブグループ"
 
-
+  leaf:
+    index:
+      name: "名称"
+      period: "発行期間"
+      status: "状態"
+      group1: "区分"
+      desc: "詳細"
+      id: "リーフID"
+    show:
+      name: "名称"
+      period: "発行期間"
+      status: "状態"
+      group1: "区分"
+      desc: "詳細"
+      id: "リーフID"
+    edit:
+      name: "名称"
+      period: "発行期間"
+      status: "状態"
+      group1: "区分"
+      desc: "詳細"
+    status:
+      elem1: "未完成"
+      elem5: "完成"
+    group1:
+      elem0: "(なし)"
+      elem1: "JP"
+      elem2: "RK"
+      elem3: "GB"
+      elem4: "EN"
+      elem5: "ST"
+      elem6: "WA"
+      elem7: "NI"
+      elem8: "IM"
+      elem9: "GS"
+      elem10: "JS"
+      elem999: "その他"
+      elem_all: "全て"

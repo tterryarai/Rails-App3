@@ -1,0 +1,46 @@
+<%= form_with(model: leaf, local: true) do |form| %>
+
+<div class='leaf_details'>
+
+  <% if leaf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(leaf.errors.count, "error") %> prohibited this leaf from being saved:</h2>
+      <ul>
+      <% leaf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= t('leaf.edit.name') %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= t('leaf.edit.period') %>
+    <%= form.text_field :period %>
+  </div>
+
+  <div class="field">
+    <%= t('leaf.edit.desc') %>
+    <%= form.text_area :desc %>
+  </div>
+
+  <div class="field">
+    <%= t('leaf.edit.status') %>
+    <%= form.select :status, options_for_select(leaf_status_list, @leaf.status)%>
+  </div>
+
+  <div class="field">
+    <%= t('leaf.edit.group1')%>
+    <%= form.select :group1, options_for_select(leaf_group1_list, @leaf.group1)%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('common.button.register')%>
+  </div>
+<% end %>
+
+</div>

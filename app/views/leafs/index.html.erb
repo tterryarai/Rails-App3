@@ -1,0 +1,78 @@
+
+<div class='operation leaf_operation'>
+  <%= link_to new_leaf_path, class: 'operation_link' do %>
+    <div class='operation_1 leaf_operation_1'>
+      <p><%= t('common.button.register')%></p>
+    </div>
+  <% end %>
+
+  <% Leaf.group1_list.each do |g| %>
+    <div class="gap"></div>
+    <% if g == 0 %>
+      <%= link_to leafs_path, class: 'operation_link' do %>
+        <div class='operation_1 leaf_operation_1'>
+          <p><%= t('leaf.group1.elem_all')%></p>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to leafs_path(group1: g), class: 'operation_link' do %>
+        <div class='operation_1 leaf_operation_1'>
+          <p><%= t('leaf.group1.elem' + g.to_s)%></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%if @leafs.present? %>
+
+  <% if @ua == 'Mobile' %>
+
+<div class='s_grid'>
+  <% @leafs.each do |leaf| %>
+  <div class='s_item'>
+    <%= link_to leaf, class: 'leaf_link' do %>
+      <div class='leaf <%= "status_" + leaf.status.to_s %>'>
+        <%= leaf.name %>
+        <%= ' [' + t('leaf.group1.elem' + leaf.group1.to_s) + ']' %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+  <% elsif @ua == 'Desktop' %>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th><%= t('leaf.index.name')%></th>
+      <th><%= t('leaf.index.period')%></th>
+      <th><%= t('leaf.index.status')%></th>
+      <th><%= t('leaf.index.group1')%></th>
+      <th><%= t('leaf.index.id')%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leafs.each do |leaf| %>
+      <% cl="status_" + leaf.status.to_s %>
+      <tr class=<%= cl %>>
+        <td><%= link_to leaf.name, leaf %></td>
+        <td><%= leaf.period %></td>
+        <td><%= t('leaf.status.elem' + leaf.status.to_s)%></td>
+        <td><%= leaf_fix_group1(leaf) %></td>
+        <td><%= leaf.id.to_s %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <% else %>
+    <%= t('common.other.unrecognized_devise')%>
+  <% end %>
+
+<% else %>
+  <%= t('common.other.no_items')%>
+<% end%>
+
+

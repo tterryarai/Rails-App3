@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_050011) do
+ActiveRecord::Schema.define(version: 2020_05_07_053711) do
 
   create_table "books", force: :cascade do |t|
     t.string "name", null: false
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 2019_11_14_050011) do
     t.string "remark3"
     t.string "remark4"
     t.string "remark5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leafs", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "period"
+    t.text "desc"
+    t.integer "status", default: 999, null: false
+    t.integer "group1", default: 999
+    t.integer "group2", default: 999
+    t.integer "group3", default: 999
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_050011) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "price"
+    t.integer "leaf_id"
   end
 
   create_table "users", force: :cascade do |t|
