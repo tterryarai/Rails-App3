@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
         @ua = 'Mobile'
       else
         # debug purpose
-        #@ua = 'Mobile'
-        @ua = 'Desktop'
+        @ua = 'Mobile'
+        #@ua = 'Desktop'
       end
     end
 
