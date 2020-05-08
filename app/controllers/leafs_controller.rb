@@ -18,9 +18,9 @@ class LeafsController < ApplicationController
 
     #@leafs = Leaf.all
     if @group1 != '0'
-      @leafs = Leaf.select(select).where(['group1 = ?', @group1])
+      @leafs = Leaf.select(select).where(['group1 = ?', @group1]).order(:id)
     else
-      @leafs = Leaf.select(select)
+      @leafs = Leaf.select(select).order(:id)
     end
 
   end
