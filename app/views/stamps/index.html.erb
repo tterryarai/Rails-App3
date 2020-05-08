@@ -52,7 +52,7 @@
   <thead>
     <tr>
       <th><%= t('stamp.index.name')%></th>
-      <th><%= t('stamp.index.price')%></th>
+      <!-- <th><%= t('stamp.index.price')%></th> -->
       <th><%= t('stamp.index.status')%></th>
       <th><%= t('stamp.index.group1')%></th>
       <th><%= t('stamp.index.group2')%></th>
@@ -66,8 +66,8 @@
     <% @stamps.each do |stamp| %>
       <% cl="status_" + stamp.status.to_s %>
       <tr class=<%= cl %>>
-        <td><%= link_to stamp.name, stamp %></td>
-        <td><%= stamp.price %></td>
+        <td><%= link_to (stamp.name + "[" + stamp.price + "]"), stamp %></td>
+        <!-- <td><%= stamp.price %></td> -->
         <td><%= t('stamp.status.elem' + stamp.status.to_s)%></td>
         <td><%= stamp_fix_group1(stamp) %></td>
         <td><%= stamp_fix_group2(stamp) %></td>

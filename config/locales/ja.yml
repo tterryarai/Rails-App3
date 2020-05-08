@@ -124,7 +124,7 @@ ja:
       elem0: "(なし)"
       elem1: "艦船"
       elem2: "銀英伝"
-      elem3: "AFV"
+      elem3: "戦車"
       elem4: "航空機"
       elem999: "その他"
       elem_all: "全て"
@@ -272,7 +272,7 @@ ja:
       remark2: "区分2"
       remark3: "区分3"
       remark4: "ID"
-      remark5: "サブグループ"
+      remark5: "サブ区分"
       leaf_id: "リーフID"
       desc: "詳細"
     show:
@@ -288,7 +288,7 @@ ja:
       remark2: "その他の区分2"
       remark3: "その他の区分3"
       remark4: "ID"
-      remark5: "サブグループ"
+      remark5: "サブ区分"
       leaf_id: "リーフID"
       desc: "詳細"
     edit:
@@ -304,7 +304,7 @@ ja:
       remark2: "区分2(記入)"
       remark3: "区分3(記入)"
       remark4: "ID"
-      remark5: "サブグループ"
+      remark5: "サブ区分"
       leaf_id: "リーフID"
       desc: "詳細"
     status:
@@ -345,7 +345,7 @@ ja:
     remark2: "その他の区分2"
     remark3: "その他の区分3"
     remark4: "ID"
-    remark5: "サブグループ"
+    remark5: "サブ区分"
 
   leaf:
     index:

@@ -7,11 +7,13 @@
       <p><%= t('common.button.edit')%></p>
     </div>
   <% end %>
+  <div class="gap"></div>
   <%= link_to @leaf, class: 'operation_link', method: :delete, data: { confirm: t('common.confirm.are_you_sure')} do %>
     <div class="<%= cl %>">
       <p><%= t('common.button.destroy')%></p>
     </div>
   <% end %>
+  <div class="gap"></div>
   <%= link_to leafs_path(group1: @group1), class: 'operation_link' do %>
     <div class="<%= cl %>">
       <p><%= t('common.button.back')%></p>
@@ -55,7 +57,7 @@
 
 <p>
   <% @leaf.stamps.each do |stamp| %>
-    <%= stamp.name %>
+    <%= stamp.name + "[" + stamp.price + "]" %>
     <BR>
   <% end %>
 </p>

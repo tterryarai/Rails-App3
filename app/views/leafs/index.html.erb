@@ -47,9 +47,9 @@
   <thead>
     <tr>
       <th><%= t('leaf.index.name')%></th>
-      <th><%= t('leaf.index.period')%></th>
       <th><%= t('leaf.index.status')%></th>
       <th><%= t('leaf.index.group1')%></th>
+      <th><%= t('leaf.index.period')%></th>
       <th><%= t('leaf.index.id')%></th>
     </tr>
   </thead>
@@ -58,9 +58,9 @@
       <% cl="status_" + leaf.status.to_s %>
       <tr class=<%= cl %>>
         <td><%= link_to leaf.name, leaf %></td>
-        <td><%= leaf.period %></td>
         <td><%= t('leaf.status.elem' + leaf.status.to_s)%></td>
         <td><%= leaf_fix_group1(leaf) %></td>
+        <td><%= leaf.period %></td>
         <td><%= leaf.id.to_s %></td>
       </tr>
     <% end %>
