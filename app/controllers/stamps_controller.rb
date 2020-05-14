@@ -41,7 +41,7 @@ class StampsController < ApplicationController
     if @group1 != '0'
       @stamps = Stamp.select(select).where(['group1 = ?', @group1])
     elsif @keyword.present?
-      @stamps = Stamp.select(select).where([search_target, key,key,key,key,key,key])
+      @stamps = Stamp.select(select).where([search_target, key,key,key,key])
     else
       @stamps = Stamp.select(select)
     end
