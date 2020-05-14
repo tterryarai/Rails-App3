@@ -31,15 +31,11 @@
   <div class="field">
     <%= t('stamp.edit.group1')%>
     <%= form.select :group1, options_for_select(stamp_group1_list, @stamp.group1)%>
-    <%= t('stamp.edit.remark1') %>
-    <%= form.text_field :remark1 %>
   </div>
 
   <div class="field">
     <%= t('stamp.edit.group2')%>
     <%= form.select :group2, options_for_select(stamp_group2_list, @stamp.group2)%>
-    <%= t('stamp.edit.remark2') %>
-    <%= form.text_field :remark2 %>
   </div>
 
   <div class="field">

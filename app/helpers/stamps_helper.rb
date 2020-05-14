@@ -40,19 +40,11 @@ def debug(action,message)
 end
 
 def stamp_fix_group1(stamp)
-  if stamp.group1 == 999 && stamp.remark1.present?
-    stamp.remark1
-  else
-    t('stamp.group1.elem' + stamp.group1.to_s)
-  end
+  t('stamp.group1.elem' + stamp.group1.to_s)
 end
 
 def stamp_fix_group2(stamp)
-  if stamp.group2 == 999 && stamp.remark2.present?
-    stamp.remark2
-  else
-    t('stamp.group2.elem' + stamp.group2.to_s)
-  end
+  t('stamp.group2.elem' + stamp.group2.to_s)
 end
 
 def stamp_fix_group3(stamp)

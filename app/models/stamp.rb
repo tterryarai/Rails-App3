@@ -24,9 +24,9 @@ GROUP1 = [1,2,3,4,5,6,7,8,9,10]
 # 8:IOM(Isle of Man)
 # 9:GS(Guernsey)
 # 10:JS(Jersey)
-# 999:その他（remark1に記入）
+# 999:その他（未使用）
 
-GROUP2 = [1,2,3,4,5,6,7,8,999]
+GROUP2 = [1,2,3,4,5,6,7,8]
 # 0:（なし）（未使用）
 # 1:普通切手(Definitives)
 # 2:記念切手(Commemoratives)
@@ -36,13 +36,19 @@ GROUP2 = [1,2,3,4,5,6,7,8,999]
 # 6:国立公園
 # 7:ふるさと切手
 # 8:クリスマス切手
-# 999:その他（remark2に記入）
+# 999:その他（未使用）
 
 GROUP3 = [999]
 # 0:（なし）（未使用）
 # 1:単片（未使用）
 # 2:シート（未使用）
 # 999:その他（remark3に記入）
+
+# remark1（未使用）
+# remark2（未使用）
+# remark3:GROUP3のその他の場合に記載
+# remark4:IDに使用
+# remark5:サブ区分に使用
 
 def self.status_list
   STATUSES
