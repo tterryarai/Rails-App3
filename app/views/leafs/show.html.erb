@@ -55,11 +55,14 @@
   <%= @leaf.desc %>
 </p>
 
-<p>
+<div>
   <% @leaf.stamps.each do |stamp| %>
-    <%= stamp.name + "[" + stamp.price + "]" %>
-    <BR>
+    <div class="stamp_image">
+      <p><%= stamp.name + "[" + stamp.price + "]" %></p>
+      <%= image_tag stamp_image(stamp), alt: stamp.name, width: Stamp.image_width %>
+      <br>
+    </div>
   <% end %>
-</p>
+</div>
 
 </div>

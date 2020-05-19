@@ -69,8 +69,8 @@
         <td><%= link_to (stamp.name + "[" + stamp.price + "]"), stamp %></td>
         <!-- <td><%= stamp.price %></td> -->
         <td><%= t('stamp.status.elem' + stamp.status.to_s)%></td>
-        <td><%= stamp_fix_group1(stamp) %></td>
-        <td><%= stamp_fix_group2(stamp) %></td>
+        <td><%= t('stamp.group1.elem' + stamp.group1.to_s)%></td>
+        <td><%= t('stamp.group2.elem' + stamp.group2.to_s)%></td>
         <td><%= stamp_fix_group3(stamp) %></td>
         <td><%= stamp.remark5 %></td>
         <td><%= stamp.remark4 %></td>

@@ -50,6 +50,14 @@ GROUP3 = [999]
 # remark4:IDに使用
 # remark5:サブ区分に使用
 
+#画像関連
+IMAGE_PATH_BASE = "#{Rails.root}/app/assets/images/stamps/"
+NO_IMAGE = "#{Rails.root}/app/assets/images/stamps/no_image.png"
+NOT_PURCHASE = "#{Rails.root}/app/assets/images/stamps/not_purchase.png"
+ERROR_STATE = "#{Rails.root}/app/assets/images/stamps/error_state.png"
+NO_IMAGE_PATH = "#{Rails.root}/app/assets/images/stamps/no_image_path.png"
+IMAGE_WIDTH = "100"
+
 def self.status_list
   STATUSES
 end
@@ -64,6 +72,30 @@ end
 
 def self.group3_list
   GROUP3
+end
+
+def self.image_path_base
+  IMAGE_PATH_BASE
+end
+
+def self.no_image
+  NO_IMAGE
+end
+
+def self.not_purchase
+  NOT_PURCHASE
+end
+
+def self.error_state
+  ERROR_STATE
+end
+
+def self.no_image_path
+  NO_IMAGE_PATH
+end
+
+def self.image_width
+  IMAGE_WIDTH
 end
 
 end
