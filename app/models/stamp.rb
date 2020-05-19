@@ -51,7 +51,7 @@ GROUP3 = [999]
 # remark5:サブ区分に使用
 
 #画像関連
-IMAGE_PATH_BASE = "/assets/stamps/"
+IMAGE_PATH_BASE = "stamps/"
 NO_IMAGE = IMAGE_PATH_BASE + "no_image.png"
 NOT_PURCHASE = IMAGE_PATH_BASE + "not_purchase.png"
 ERROR_STATE = IMAGE_PATH_BASE + "error_state.png"

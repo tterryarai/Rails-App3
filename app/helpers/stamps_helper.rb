@@ -46,17 +46,13 @@ end
 def stamp_image(s)
   image_path = Stamp.image_path_base + s.image_path
   if s.image_path.empty? then
-     Stamp.no_image_path
+    Stamp.no_image_path
   elsif s.status == Stamp.status_list[1] or s.status == Stamp.status_list[2] then
-    if File.exist?(image_path) then
-      image_path
-    else
-      Stamp.no_image
-    end
+    image_path
   elsif s.status == Stamp.status_list[0] then
-      Stamp.not_purchase
+    Stamp.not_purchase
   else
-      Stamp.error_state
+    Stamp.error_state
   end
 end
 
