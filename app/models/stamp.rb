@@ -51,11 +51,11 @@ GROUP3 = [999]
 # remark5:サブ区分に使用
 
 #画像関連
-IMAGE_PATH_BASE = "#{Rails.root}/app/assets/images/stamps/"
-NO_IMAGE = "#{Rails.root}/app/assets/images/stamps/no_image.png"
-NOT_PURCHASE = "#{Rails.root}/app/assets/images/stamps/not_purchase.png"
-ERROR_STATE = "#{Rails.root}/app/assets/images/stamps/error_state.png"
-NO_IMAGE_PATH = "#{Rails.root}/app/assets/images/stamps/no_image_path.png"
+IMAGE_PATH_BASE = "/assets/stamps/"
+NO_IMAGE = IMAGE_PATH_BASE + "no_image.png"
+NOT_PURCHASE = IMAGE_PATH_BASE + "not_purchase.png"
+ERROR_STATE = IMAGE_PATH_BASE + "error_state.png"
+NO_IMAGE_PATH = IMAGE_PATH_BASE + "no_image_path.png"
 IMAGE_WIDTH = "100"
 
 def self.status_list
