@@ -24,8 +24,8 @@ end
 
 
 def marshal_stamps(leaf)
-#   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', leaf.id]).order(:remark1)
-   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', leaf.id])
+#   stamps = Stamp.select('id, name, price, status, image_path, remark1').where(['leaf_id = ?', leaf.id]).order(:remark1)
+   stamps = Stamp.select('id, name, price, status, image_path, remark1').where(['leaf_id = ?', leaf.id])
 end
 
 

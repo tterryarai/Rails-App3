@@ -27,7 +27,7 @@ class StampsController < ApplicationController
     # order is;
       order = 'group1, group2, group3, remark3, name'
     else
-      select = 'id, name, price, status, group1, group2, group3, remark3, remark4, remark5, leaf_id'
+      select = 'id, name, price, status, group1, group2, group3, remark3, remark4, remark5, leaf_id, remark1'
     # order is;
       order = 'group1, group2, group3, remark3, remark4, remark5, name'
     end
