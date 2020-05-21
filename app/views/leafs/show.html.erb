@@ -56,7 +56,7 @@
 </p>
 
 <div>
-  <% marshal_stamps(@leaf.id).each do |stamp| %>
+  <% marshal_stamps(@leaf).each do |stamp| %>
     <div class="stamp_image">
       <p><%= stamp.name + "[" + stamp.price + "]" %></p>
       <%= image_tag stamp_image(stamp), alt: stamp.name, width: Stamp.image_width %>

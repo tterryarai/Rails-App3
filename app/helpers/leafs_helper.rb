@@ -23,8 +23,9 @@ def leaf_fix_group1(leaf)
 end
 
 
-def marshal_stamps(id)
-   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', id]).order(:remark1)
+def marshal_stamps(leaf)
+#   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', leaf.id]).order(:remark1)
+   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', leaf.id])
 end
 
 
