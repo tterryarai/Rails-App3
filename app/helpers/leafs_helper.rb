@@ -23,6 +23,11 @@ def leaf_fix_group1(leaf)
 end
 
 
+def marshal_stamps(id)
+   stamps = Stamp.select('id, name, price, image_path, remark1').where(['leaf_id = ?', id]).order(:remark1)
+end
+
+
 def debug(action,message)
   p 'Debug:' + 'LeafView' + ':' + action + ':' + message
 end

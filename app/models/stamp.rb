@@ -44,7 +44,7 @@ GROUP3 = [999]
 # 2:シート（未使用）
 # 999:その他（remark3に記入）
 
-# remark1（未使用）
+# remark1:検索順序（リーフの表示順）に使用
 # remark2（未使用）
 # remark3:GROUP3のその他の場合に記載
 # remark4:IDに使用
