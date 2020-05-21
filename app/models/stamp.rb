@@ -98,4 +98,11 @@ def self.image_width
   IMAGE_WIDTH
 end
 
+
+#Validation
+validates :image_path, presence: true
+validates :remark1,    presence: true
+validates :leaf_id,    presence: true
+
+
 end
