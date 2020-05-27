@@ -58,9 +58,12 @@
 <div>
   <% marshal_stamps(@leaf).each do |stamp| %>
     <div class="stamp_image">
-      <p><%= stamp.name + "[" + stamp.price + "]" %></p>
-      <%= image_tag stamp_image(stamp), alt: stamp.name, width: Stamp.image_width %>
-      <br>
+      <%= link_to stamp do %>
+      <figure>
+        <legend><%= stamp.name + "[" + stamp.price + "]" %></legend>
+        <%= image_tag stamp_image(stamp), alt: stamp.name %>
+      </figure>
+      <% end %>
     </div>
   <% end %>
 </div>
