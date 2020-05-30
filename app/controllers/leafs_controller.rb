@@ -8,17 +8,26 @@ class LeafsController < ApplicationController
     # set group1 from params
     group1_check
 
+    # set search keyword
+    keyword_check
+
+    # terget attribute for search and keyword is;
+    search_target = 'name LIKE ?'
+    key = '%'+@keyword+'%'
+
     # get necessary attr only
     select = 'id, name, period, status, group1'
 
     # Debug
     #debug 'index', 'page is set: ['+@page.to_s+':'+session[:page].to_s+':'+params[:page].to_s+']'
     debug 'index', 'group1 is set: ['+@group1.to_s+':'+session[:group1].to_s+':'+params[:group1].to_s+']'
-    #debug 'index', 'search is set: ['+@keyword+']'
+    debug 'index', 'search is set: ['+@keyword+']'
 
     #@leafs = Leaf.all
     if @group1 != '0'
       @leafs = Leaf.select(select).where(['group1 = ?', @group1]).order(:id)
+    elsif @keyword.present?
+      @leafs = Leaf.select(select).where([search_target, key])
     else
       @leafs = Leaf.select(select).order(:id)
     end
