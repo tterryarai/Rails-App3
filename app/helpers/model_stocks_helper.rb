@@ -61,7 +61,7 @@ end
 
 
 def model_stock_fix_group1(ms)
-  if ms.group1 == 999 && ms.remark1.present?
+  if ms.remark1.present?
     ms.remark1
   else
     t('model_stock.group1.elem' + ms.group1.to_s)
@@ -69,7 +69,7 @@ def model_stock_fix_group1(ms)
 end
 
 def model_stock_fix_group2(ms)
-  if ms.group2 == 999 && ms.remark2.present?
+  if ms.remark2.present?
     ms.remark2
   else
     t('model_stock.group2.elem' + ms.group2.to_s)
@@ -77,7 +77,7 @@ def model_stock_fix_group2(ms)
 end
 
 def model_stock_fix_group3(ms)
-  if ms.group3 == 999 && ms.remark3.present?
+  if ms.remark3.present?
     ms.remark3
   else
     t('model_stock.group3.elem' + ms.group3.to_s)
